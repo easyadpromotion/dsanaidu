@@ -1,0 +1,2448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Naidu — #1 CRM for Loan DSAs in India</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --brand:#1a56db;--brand-dark:#1340b0;--brand-mid:#2d63e8;--brand-light:#eff4ff;
+  --accent:#f97316;--text:#111928;--text2:#6b7280;--text3:#9ca3af;
+  --bg:#f0f4f8;--card:#ffffff;--border:#e5e7eb;--border2:#d1d5db;
+  --green:#059669;--green-bg:#ecfdf5;--red:#ef4444;--red-bg:#fef2f2;
+  --yellow:#d97706;--yellow-bg:#fffbeb;--sidebar:220px;
+}
+html,body{height:100%;font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text)}
+
+/* ══════════════════════════ LOGIN PAGE ══════════════════════════ */
+#loginPage{display:flex;min-height:100vh}
+.left{flex:1;background:linear-gradient(150deg,#0d2a72 0%,#1a56db 50%,#2563eb 80%,#3b82f6 100%);display:flex;flex-direction:column;justify-content:space-between;padding:44px 48px;position:relative;overflow:hidden}
+.blob{position:absolute;border-radius:50%;background:rgba(255,255,255,.05);pointer-events:none}
+.l-logo{display:flex;align-items:center;gap:10px;text-decoration:none;position:relative;z-index:1}
+.l-logo-box{width:40px;height:40px;background:rgba(255,255,255,.18);border-radius:11px;border:1.5px solid rgba(255,255,255,.28);display:flex;align-items:center;justify-content:center}
+.l-logo-box svg{width:20px;height:20px}
+.l-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#fff;letter-spacing:-.4px}
+.l-logo-name em{font-style:normal;color:rgba(255,255,255,.55)}
+.l-hero{position:relative;z-index:1;padding:32px 0 8px}
+.l-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.22);border-radius:100px;padding:5px 14px;margin-bottom:22px;font-size:11.5px;font-weight:700;color:rgba(255,255,255,.92);letter-spacing:.5px;text-transform:uppercase}
+.l-dot{width:6px;height:6px;border-radius:50%;background:#4ade80;box-shadow:0 0 6px #4ade80;animation:blink 2s ease-in-out infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.l-h1{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:34px;color:#fff;line-height:1.2;letter-spacing:-.5px;margin-bottom:14px}
+.l-h1 u{text-decoration:none;color:#93c5fd}
+.l-sub{color:rgba(255,255,255,.7);font-size:14.5px;line-height:1.7;max-width:370px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:30px 0}
+.s-card{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:15px 12px;text-align:center}
+.s-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:22px;color:#fff;line-height:1.1}
+.s-lbl{font-size:10.5px;color:rgba(255,255,255,.6);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.feats{display:flex;flex-direction:column;gap:11px;position:relative;z-index:1}
+.feat{display:flex;align-items:center;gap:11px;color:rgba(255,255,255,.85);font-size:13.5px}
+.feat-tick{width:21px;height:21px;flex-shrink:0;border-radius:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center}
+.feat-tick svg{width:11px;height:11px}
+.testi{border-top:1px solid rgba(255,255,255,.15);padding-top:20px;position:relative;z-index:1}
+.testi-q{color:rgba(255,255,255,.72);font-size:13px;line-height:1.65;font-style:italic;margin-bottom:14px}
+.testi-author{display:flex;align-items:center;gap:10px}
+.testi-av{width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.2);border:1.5px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;font-family:'Plus Jakarta Sans',sans-serif}
+.testi-name{font-size:13px;font-weight:600;color:#fff}
+.testi-role{font-size:11px;color:rgba(255,255,255,.55);margin-top:1px}
+.right{width:510px;min-height:100vh;background:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:48px 52px;box-shadow:-6px 0 40px rgba(0,0,0,.07)}
+.r-logo{display:flex;align-items:center;gap:9px;text-decoration:none;margin-bottom:36px}
+.r-logo-box{width:36px;height:36px;background:var(--brand);border-radius:9px;display:flex;align-items:center;justify-content:center}
+.r-logo-box svg{width:19px;height:19px}
+.r-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:18px;color:var(--text);letter-spacing:-.3px}
+.r-logo-name em{font-style:normal;color:var(--brand)}
+.steps-wrap{display:flex;flex-direction:column;gap:6px;width:100%;margin-bottom:32px}
+.steps-track{display:flex;align-items:center}
+.step-circle{width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0;transition:all .3s}
+.step-circle.done{background:var(--green);color:#fff}
+.step-circle.active{background:var(--brand);color:#fff;box-shadow:0 0 0 4px rgba(26,86,219,.15)}
+.step-circle.pending{background:#f3f4f6;color:var(--text3);border:1.5px solid var(--border2)}
+.step-line{flex:1;height:2px;background:var(--border);margin:0 4px;transition:background .3s}
+.step-line.done{background:var(--green)}
+.step-label{font-size:10px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-top:4px;text-align:center;white-space:nowrap}
+.panel{display:none;width:100%}
+.panel.active{display:block}
+.r-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;color:var(--text);letter-spacing:-.4px;margin-bottom:6px}
+.r-sub{font-size:13.5px;color:var(--text2);margin-bottom:28px;line-height:1.55}
+.r-sub a{color:var(--brand);font-weight:500;text-decoration:none}
+.r-sub strong{color:var(--text);font-weight:600}
+.phone-row{display:flex;gap:0;border:1.5px solid var(--border);border-radius:10px;overflow:hidden;transition:border-color .15s,box-shadow .15s}
+.phone-row:focus-within{border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.phone-cc{background:#f9fafb;border-right:1.5px solid var(--border);padding:0 12px;display:flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--text);cursor:pointer;user-select:none;white-space:nowrap;min-height:46px}
+.phone-cc svg{width:12px;height:12px;color:var(--text3)}
+.phone-input{flex:1;border:none;outline:none;padding:0 14px;font-size:15px;font-family:'DM Sans',sans-serif;color:var(--text);background:#fff;height:46px;letter-spacing:.5px}
+.phone-input::placeholder{color:var(--text3);letter-spacing:0;font-size:14px}
+.otp-row{display:flex;gap:10px;justify-content:center;margin:8px 0 4px}
+.otp-box{width:52px;height:56px;border:2px solid var(--border);border-radius:10px;font-size:22px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;text-align:center;outline:none;color:var(--text);background:#fff;transition:border-color .15s,box-shadow .15s;caret-color:var(--brand)}
+.otp-box:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,86,219,.12)}
+.otp-box.filled{border-color:var(--brand);background:var(--brand-light)}
+.resend-row{display:flex;align-items:center;justify-content:center;gap:6px;margin:14px 0 0}
+.resend-timer{font-size:13px;color:var(--text3)}
+.resend-btn{font-size:13px;color:var(--brand);font-weight:600;background:none;border:none;cursor:pointer;padding:0}
+.field{margin-bottom:16px}
+.field label{display:block;font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:6px;letter-spacing:.1px}
+.field label span{color:var(--red)}
+.field input,.field select{width:100%;height:46px;border:1.5px solid var(--border);border-radius:10px;background:#fff;padding:0 14px;font-size:14px;color:var(--text);outline:none;transition:border-color .15s,box-shadow .15s;font-family:'DM Sans',sans-serif}
+.field input:focus,.field select:focus{border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.field input::placeholder{color:var(--text3)}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.btn{width:100%;height:46px;border:none;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;letter-spacing:.1px;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.btn-primary{background:var(--brand);color:#fff;box-shadow:0 2px 10px rgba(26,86,219,.28)}
+.btn-primary:hover{background:var(--brand-dark);box-shadow:0 4px 18px rgba(26,86,219,.35)}
+.btn-ghost{background:#fff;color:var(--text);border:1.5px solid var(--border2);margin-top:10px}
+.btn-ghost:hover{background:#f9fafb;border-color:#9ca3af}
+.info-banner{background:var(--brand-light);border:1px solid rgba(26,86,219,.2);border-radius:10px;padding:12px 14px;display:flex;align-items:flex-start;gap:10px;margin-bottom:20px}
+.info-banner svg{width:16px;height:16px;color:var(--brand);flex-shrink:0;margin-top:1px}
+.info-banner p{font-size:13px;color:var(--brand-dark);line-height:1.55}
+.success-ring{width:72px;height:72px;background:var(--green-bg);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;border:2px solid rgba(5,150,105,.2)}
+.success-ring svg{width:34px;height:34px;color:var(--green)}
+.btn-google{width:100%;height:44px;background:#fff;border:1.5px solid var(--border);border-radius:10px;color:var(--text);font-size:13.5px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:9px;font-family:'DM Sans',sans-serif;transition:background .15s,border-color .15s;margin-top:10px}
+.btn-google:hover{background:#f9fafb;border-color:var(--border2)}
+.divider{display:flex;align-items:center;gap:10px;margin:18px 0;color:var(--text3);font-size:12px}
+.divider::before,.divider::after{content:'';flex:1;height:1px;background:var(--border)}
+.trust{display:flex;align-items:center;justify-content:center;gap:7px;margin-top:26px;font-size:11.5px;color:var(--text3)}
+.trust svg{width:13px;height:13px;color:var(--green)}
+@media(max-width:860px){.left{display:none}.right{width:100%;padding:40px 24px}}
+
+/* ══════════════════════════ DASHBOARD ══════════════════════════ */
+#dashPage{display:none;min-height:100vh;background:var(--bg)}
+
+/* Sidebar */
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar);height:100vh;background:#fff;border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:100;overflow-y:auto}
+.sb-logo{display:flex;align-items:center;gap:9px;padding:20px 18px 16px;border-bottom:1px solid var(--border);text-decoration:none}
+.sb-logo-box{width:32px;height:32px;background:var(--brand);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.sb-logo-box svg{width:17px;height:17px}
+.sb-logo-name{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;color:var(--text);letter-spacing:-.3px}
+.sb-logo-name em{font-style:normal;color:var(--brand)}
+.sb-section{padding:14px 10px 6px}
+.sb-section-lbl{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.7px;color:var(--text3);padding:0 8px;margin-bottom:4px}
+.sb-item{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:8px;cursor:pointer;color:var(--text2);font-size:13.5px;font-weight:500;transition:all .15s;text-decoration:none;margin-bottom:2px}
+.sb-item:hover{background:#f3f4f6;color:var(--text)}
+.sb-item.active{background:var(--brand-light);color:var(--brand);font-weight:600}
+.sb-item svg{width:16px;height:16px;flex-shrink:0}
+.sb-item .badge{margin-left:auto;background:var(--red);color:#fff;font-size:10px;font-weight:700;border-radius:100px;padding:1px 6px;font-family:'Plus Jakarta Sans',sans-serif}
+.sb-item .badge.green{background:var(--green)}
+.sb-footer{margin-top:auto;padding:14px 10px;border-top:1px solid var(--border)}
+.sb-user{display:flex;align-items:center;gap:10px;padding:8px 10px;border-radius:8px;cursor:pointer;transition:background .15s}
+.sb-user:hover{background:#f3f4f6}
+.sb-av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#1a56db,#3b82f6);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0}
+.sb-uname{font-size:13px;font-weight:600;color:var(--text)}
+.sb-urole{font-size:11px;color:var(--text3)}
+
+/* Topbar */
+.topbar{position:fixed;top:0;left:var(--sidebar);right:0;height:58px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:99}
+.topbar-left{display:flex;flex-direction:column}
+.topbar-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:15px;color:var(--text);letter-spacing:-.2px}
+.topbar-sub{font-size:12px;color:var(--text3)}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.tb-icon-btn{width:36px;height:36px;border:1px solid var(--border);border-radius:8px;background:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--text2);position:relative;transition:background .15s}
+.tb-icon-btn:hover{background:#f3f4f6}
+.tb-icon-btn svg{width:16px;height:16px}
+.notif-dot{position:absolute;top:7px;right:7px;width:7px;height:7px;background:var(--red);border-radius:50%;border:1.5px solid #fff}
+.tb-add-btn{display:flex;align-items:center;gap:7px;background:var(--brand);color:#fff;border:none;border-radius:8px;padding:0 14px;height:36px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:background .15s}
+.tb-add-btn:hover{background:var(--brand-dark)}
+.tb-add-btn svg{width:14px;height:14px}
+
+/* Main content */
+.main{margin-left:var(--sidebar);padding-top:58px;min-height:100vh}
+.content{padding:24px}
+
+/* KPI cards */
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px}
+.kpi-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:18px 20px;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:12px 12px 0 0}
+.kpi-card.blue::before{background:linear-gradient(90deg,#1a56db,#3b82f6)}
+.kpi-card.green::before{background:linear-gradient(90deg,#059669,#34d399)}
+.kpi-card.orange::before{background:linear-gradient(90deg,#f97316,#fbbf24)}
+.kpi-card.red::before{background:linear-gradient(90deg,#ef4444,#f87171)}
+.kpi-icon{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px}
+.kpi-icon.blue{background:#eff4ff}
+.kpi-icon.green{background:var(--green-bg)}
+.kpi-icon.orange{background:#fff7ed}
+.kpi-icon.red{background:var(--red-bg)}
+.kpi-icon svg{width:18px;height:18px}
+.kpi-icon.blue svg{color:#1a56db}
+.kpi-icon.green svg{color:var(--green)}
+.kpi-icon.orange svg{color:#f97316}
+.kpi-icon.red svg{color:var(--red)}
+.kpi-lbl{font-size:12px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+.kpi-val{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--text);line-height:1;margin-bottom:8px}
+.kpi-change{display:flex;align-items:center;gap:4px;font-size:12px;font-weight:600}
+.kpi-change.up{color:var(--green)}
+.kpi-change.down{color:var(--red)}
+.kpi-change svg{width:12px;height:12px}
+
+/* Section rows */
+.section-row{display:grid;grid-template-columns:1fr 360px;gap:16px;margin-bottom:24px}
+.section-row.full{grid-template-columns:1fr}
+
+/* Cards */
+.dash-card{background:#fff;border:1px solid var(--border);border-radius:12px;overflow:hidden}
+.card-head{display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border)}
+.card-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:14px;color:var(--text)}
+.card-sub{font-size:12px;color:var(--text3);margin-top:2px}
+.card-action{font-size:12px;color:var(--brand);font-weight:600;cursor:pointer;text-decoration:none;background:none;border:none}
+.card-body{padding:20px}
+
+/* Lead table */
+.lead-table{width:100%;border-collapse:collapse}
+.lead-table th{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);padding:0 0 12px;text-align:left;border-bottom:1px solid var(--border)}
+.lead-table td{padding:13px 0;border-bottom:1px solid #f3f4f6;font-size:13px;color:var(--text2);vertical-align:middle}
+.lead-table tr:last-child td{border-bottom:none}
+.lead-table td:first-child{color:var(--text);font-weight:500}
+.lead-name{font-size:13px;font-weight:600;color:var(--text)}
+.lead-phone{font-size:11.5px;color:var(--text3);margin-top:2px}
+.lead-amount{font-weight:600;color:var(--text);font-family:'Plus Jakarta Sans',sans-serif}
+
+/* Status badges */
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:100px;font-size:11px;font-weight:700;letter-spacing:.2px}
+.badge::before{content:'';width:5px;height:5px;border-radius:50%;flex-shrink:0}
+.badge.new{background:#eff4ff;color:#1a56db}.badge.new::before{background:#1a56db}
+.badge.docs{background:#fff7ed;color:#c2410c}.badge.docs::before{background:#f97316}
+.badge.verify{background:#fefce8;color:#a16207}.badge.verify::before{background:#eab308}
+.badge.approved{background:var(--green-bg);color:#065f46}.badge.approved::before{background:var(--green)}
+.badge.disbursed{background:#f0fdf4;color:#166534}.badge.disbursed::before{background:#22c55e}
+.badge.rejected{background:var(--red-bg);color:#991b1b}.badge.rejected::before{background:var(--red)}
+
+/* Bank logos */
+.bank-logo{display:flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--text)}
+.bank-dot{width:26px;height:26px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:800;color:#fff;flex-shrink:0;font-family:'Plus Jakarta Sans',sans-serif}
+
+/* Quick actions */
+.qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:16px 20px}
+.qa-btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;padding:16px 10px;border:1.5px solid var(--border);border-radius:10px;cursor:pointer;transition:all .15s;text-align:center;background:#fff}
+.qa-btn:hover{border-color:var(--brand);background:var(--brand-light)}
+.qa-btn:hover .qa-icon{background:var(--brand);color:#fff}
+.qa-icon{width:36px;height:36px;border-radius:9px;background:#f3f4f6;display:flex;align-items:center;justify-content:center;transition:all .15s}
+.qa-icon svg{width:16px;height:16px;color:var(--text2)}
+.qa-lbl{font-size:12px;font-weight:600;color:var(--text2)}
+
+/* Commission bar */
+.comm-item{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;border-bottom:1px solid #f3f4f6}
+.comm-item:last-child{border-bottom:none}
+.comm-info{flex:1}
+.comm-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.comm-bank{font-size:11.5px;color:var(--text3)}
+.comm-bar-wrap{flex:1;margin:0 16px}
+.comm-bar-bg{height:6px;background:#f3f4f6;border-radius:3px;overflow:hidden}
+.comm-bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,#1a56db,#60a5fa)}
+.comm-amt{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--green);white-space:nowrap}
+
+/* Activity feed */
+.activity-item{display:flex;gap:12px;padding:12px 20px;border-bottom:1px solid #f9fafb}
+.activity-item:last-child{border-bottom:none}
+.act-icon{width:32px;height:32px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.act-icon svg{width:14px;height:14px}
+.act-text{font-size:13px;color:var(--text2);line-height:1.5}
+.act-text strong{color:var(--text);font-weight:600}
+.act-time{font-size:11px;color:var(--text3);margin-top:2px}
+
+/* Chart bars */
+.chart-wrap{padding:0 20px 16px;display:flex;align-items:flex-end;gap:6px;height:120px}
+.bar-col{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px}
+.bar-fill{width:100%;border-radius:4px 4px 0 0;transition:height .4s ease;min-height:4px;cursor:pointer}
+.bar-fill.cr{background:linear-gradient(180deg,#3b82f6,#1a56db)}
+.bar-fill.dr{background:linear-gradient(180deg,#f87171,#ef4444);opacity:.7}
+.bar-lbl{font-size:9.5px;color:var(--text3);font-weight:600;letter-spacing:.3px;text-align:center}
+
+/* Tab pills */
+.tab-pills{display:flex;gap:4px;background:#f3f4f6;border-radius:8px;padding:3px;margin-bottom:16px}
+.tab-pill{flex:1;padding:6px;border-radius:6px;font-size:12px;font-weight:600;cursor:pointer;text-align:center;color:var(--text3);transition:all .15s}
+.tab-pill.active{background:#fff;color:var(--brand);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+
+/* Greeting bar */
+.greeting{background:linear-gradient(120deg,#1a56db 0%,#2563eb 60%,#3b82f6 100%);border-radius:14px;padding:24px 28px;margin-bottom:24px;display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden}
+.greeting::before{content:'';position:absolute;right:-40px;top:-40px;width:200px;height:200px;border-radius:50%;background:rgba(255,255,255,.06)}
+.greet-text h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:#fff;margin-bottom:4px}
+.greet-text p{font-size:13.5px;color:rgba(255,255,255,.75)}
+.greet-badge{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px;flex-shrink:0}
+.greet-badge svg{width:13px;height:13px}
+
+/* Pipeline stages */
+.pipeline{display:flex;gap:10px;margin-bottom:24px;overflow-x:auto;padding-bottom:4px}
+.pipe-stage{background:#fff;border:1px solid var(--border);border-radius:10px;padding:14px 16px;min-width:130px;text-align:center;flex-shrink:0}
+.pipe-num{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:24px;margin-bottom:2px}
+.pipe-lbl{font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.4px;margin-bottom:6px}
+.pipe-bar{height:4px;border-radius:2px;background:#f3f4f6;overflow:hidden}
+.pipe-bar-fill{height:100%;border-radius:2px}
+
+/* Responsive */
+@media(max-width:1100px){.kpi-grid{grid-template-columns:repeat(2,1fr)}.section-row{grid-template-columns:1fr}}
+@media(max-width:768px){.sidebar{display:none}.main{margin-left:0}}
+
+
+/* ═══ 3-Tab Login ═══ */
+.login-tabs{display:flex;border:1.5px solid var(--border);border-radius:11px;overflow:hidden;margin-bottom:28px;width:100%}
+.login-tab{flex:1;padding:11px 6px;font-size:13px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;text-align:center;cursor:pointer;background:#f9fafb;color:var(--text2);border:none;border-right:1.5px solid var(--border);transition:all .2s}
+.login-tab:last-child{border-right:none}
+.login-tab.active{background:var(--brand);color:#fff}
+.login-panel{display:none;width:100%}
+.login-panel.active{display:block}
+.divider{display:flex;align-items:center;gap:12px;margin:16px 0}
+.divider-line{flex:1;height:1px;background:var(--border)}
+.divider-txt{font-size:12px;color:var(--text3);white-space:nowrap}
+
+/* ═══ Loan Type Buttons (Add Bank Modal) ═══ */
+.loan-type-btns{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:4px}
+.loan-type-btn{padding:10px 6px;border:2px solid var(--border);border-radius:10px;background:#fff;font-size:11.5px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;text-align:center;transition:all .2s;color:var(--text2);line-height:1.4}
+.loan-type-btn:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-light)}
+.loan-type-btn.selected{border-color:var(--brand);background:var(--brand);color:#fff}
+.loan-type-btn .lt-icon{font-size:18px;display:block;margin-bottom:3px}
+
+/* ═══ Bank Tab Bar ═══ */
+.bank-tab-bar{display:flex;gap:7px;margin-bottom:18px;flex-wrap:wrap}
+.bank-tab{padding:8px 16px;border:1.5px solid var(--border);border-radius:20px;font-size:12.5px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;cursor:pointer;background:#fff;color:var(--text2);transition:all .2s;white-space:nowrap}
+.bank-tab.active{background:var(--brand);border-color:var(--brand);color:#fff}
+.bank-tab:hover:not(.active){border-color:var(--brand);color:var(--brand)}
+
+/* ═══ Bank Card ═══ */
+.bank-card{background:#fff;border:1px solid var(--border);border-radius:14px;padding:18px;transition:box-shadow .2s,border-color .2s}
+.bank-card:hover{box-shadow:0 4px 20px rgba(0,0,0,.09);border-color:var(--brand-mid)}
+.bank-card-add{padding:20px;border:2px dashed var(--border);background:#fafafa;border-radius:14px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:200px;cursor:pointer;transition:all .15s}
+.bank-card-add:hover{border-color:var(--brand);background:var(--brand-light)}
+.bank-avatar{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0}
+.loan-tag{display:inline-flex;align-items:center;padding:2px 9px;border-radius:20px;font-size:10.5px;font-weight:700;margin-right:4px;margin-bottom:4px}
+.loan-tag.bl{background:#eff6ff;color:#1d4ed8}
+.loan-tag.pl{background:#f0fdf4;color:#16a34a}
+.loan-tag.hl{background:#fdf4ff;color:#7c3aed}
+.loan-tag.lap{background:#fff7ed;color:#c2410c}
+.bank-stat-box{background:#f9fafb;border-radius:8px;padding:9px;text-align:center}
+.bank-stat-lbl{font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px}
+.bank-stat-val{font-weight:700;color:var(--text);font-size:13px}
+.bank-act-btn{flex:1;height:30px;border:none;border-radius:7px;font-size:11.5px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s}
+.bank-act-btn.view{background:var(--brand-light);color:var(--brand)}
+.bank-act-btn.view:hover{background:var(--brand);color:#fff}
+.bank-act-btn.del{background:var(--red-bg);color:var(--red)}
+.bank-act-btn.del:hover{background:var(--red);color:#fff}
+.bank-act-btn.chat{background:#ecfdf5;color:var(--green)}
+.bank-act-btn.chat:hover{background:var(--green);color:#fff}
+
+/* ═══ AI Search ═══ */
+.ai-search-wrap{position:relative;margin-bottom:10px}
+.ai-search-input{width:100%;border:2px solid var(--border);border-radius:12px;padding:12px 16px 12px 46px;font-size:14px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;transition:all .2s;background:#fff}
+.ai-search-input:focus{border-color:var(--brand);box-shadow:0 0 0 4px rgba(26,86,219,.08)}
+.ai-search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:17px;pointer-events:none;z-index:1}
+.ai-results{position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid var(--border);border-radius:12px;z-index:500;overflow:hidden;box-shadow:0 12px 40px rgba(0,0,0,.14);display:none}
+.ai-results.show{display:block}
+.ai-result-item{padding:10px 14px;cursor:pointer;border-bottom:1px solid #f9fafb;transition:background .1s}
+.ai-result-item:last-child{border:none}
+.ai-result-item:hover{background:var(--brand-light)}
+.ai-result-bank{font-weight:700;font-size:13px;color:var(--text);display:flex;align-items:center;flex-wrap:wrap;gap:5px}
+.ai-result-sub{font-size:11.5px;color:var(--text3);margin-top:2px}
+.search-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.search-chip{background:#fff;border:1.5px solid var(--border);border-radius:20px;padding:5px 13px;font-size:11.5px;color:var(--text2);cursor:pointer;transition:all .15s;white-space:nowrap}
+.search-chip:hover{border-color:var(--brand);color:var(--brand);background:var(--brand-light)}
+.search-chip.clear{border-color:var(--red);color:var(--red)}
+.search-chip.clear:hover{background:var(--red);color:#fff}
+
+/* ═══ Policy Paste ═══ */
+.policy-paste-area{width:100%;border:2px dashed var(--border);border-radius:10px;padding:12px 14px;font-size:13px;font-family:'DM Sans',sans-serif;resize:vertical;min-height:90px;outline:none;color:var(--text);background:#fafafa;transition:all .2s}
+.policy-paste-area:focus{border-color:var(--brand);border-style:solid;background:#fff}
+.parse-status{font-size:12px;font-weight:600;margin-top:6px;padding:7px 12px;border-radius:8px;background:var(--green-bg);color:var(--green);display:none}
+
+/* ═══ Banker Communication ═══ */
+.banker-comm-section{margin-top:32px;border-top:2px solid var(--border);padding-top:28px}
+.comm-contacts-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px}
+.comm-contact-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px;cursor:pointer;transition:all .2s}
+.comm-contact-card:hover,.comm-contact-card.selected{border-color:var(--brand);box-shadow:0 0 0 3px rgba(26,86,219,.1)}
+.cc-top{display:flex;align-items:center;gap:10px;margin-bottom:12px}
+.cc-avatar{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;font-family:'Plus Jakarta Sans',sans-serif;flex-shrink:0}
+.cc-name{font-weight:700;font-size:13.5px;color:var(--text)}
+.cc-bank{font-size:11.5px;color:var(--text3);margin-top:1px}
+.cc-details{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.cc-detail{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--text2)}
+.cc-detail svg{width:13px;height:13px;color:var(--text3);flex-shrink:0}
+.cc-actions{display:flex;gap:5px}
+.cc-btn{flex:1;height:30px;border:none;border-radius:7px;font-size:11px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;transition:all .15s}
+.cc-btn.call{background:#ecfdf5;color:var(--green)}
+.cc-btn.call:hover{background:var(--green);color:#fff}
+.cc-btn.wp{background:#f0fdf4;color:#16a34a}
+.cc-btn.wp:hover{background:#16a34a;color:#fff}
+.cc-btn.mail{background:var(--brand-light);color:var(--brand)}
+.cc-btn.mail:hover{background:var(--brand);color:#fff}
+.cc-btn.del{background:var(--red-bg);color:var(--red)}
+.cc-btn.del:hover{background:var(--red);color:#fff}
+
+/* ═══ Chat Box ═══ */
+.chat-wrap{background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.chat-head{padding:14px 18px;background:linear-gradient(135deg,var(--brand),var(--brand-mid));color:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.chat-head-left{flex:1}
+.chat-head-title{font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:14px}
+.chat-head-sub{font-size:11.5px;opacity:.8;margin-top:1px}
+.chat-head-actions{display:flex;gap:6px}
+.chat-head-btn{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.3);border-radius:8px;padding:6px 11px;cursor:pointer;color:#fff;font-size:12px;font-weight:700;font-family:'Plus Jakarta Sans',sans-serif;transition:background .15s;white-space:nowrap}
+.chat-head-btn:hover{background:rgba(255,255,255,.3)}
+.chat-contact-pills{display:flex;gap:7px;padding:10px 14px;border-bottom:1px solid var(--border);overflow-x:auto;background:#f9fafb}
+.chat-contact-pills::-webkit-scrollbar{height:3px}
+.chat-contact-pills::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.chat-pill{padding:5px 13px;border:1.5px solid var(--border);border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;background:#fff;color:var(--text2);transition:all .15s;flex-shrink:0}
+.chat-pill.active{background:var(--brand);border-color:var(--brand);color:#fff}
+.chat-pill:hover:not(.active){border-color:var(--brand);color:var(--brand)}
+.chat-body{height:280px;overflow-y:auto;padding:14px 16px;background:#f8fafc;display:flex;flex-direction:column;gap:10px}
+.chat-body::-webkit-scrollbar{width:4px}
+.chat-body::-webkit-scrollbar-thumb{background:var(--border2);border-radius:2px}
+.chat-msg{max-width:72%;padding:9px 13px;border-radius:12px;font-size:13px;line-height:1.5;word-break:break-word}
+.chat-msg.sent{background:var(--brand);color:#fff;align-self:flex-end;border-bottom-right-radius:3px}
+.chat-msg.recv{background:#fff;color:var(--text);border:1px solid var(--border);align-self:flex-start;border-bottom-left-radius:3px}
+.chat-msg-time{font-size:10px;opacity:.65;margin-top:3px;text-align:right}
+.chat-empty{text-align:center;padding:60px 20px;color:var(--text3);font-size:13.5px;font-weight:500}
+.chat-input-row{display:flex;gap:8px;padding:12px 14px;border-top:1px solid var(--border);align-items:flex-end;background:#fff}
+.chat-input{flex:1;border:1.5px solid var(--border);border-radius:10px;padding:9px 13px;font-size:13.5px;font-family:'DM Sans',sans-serif;color:var(--text);outline:none;resize:none;min-height:42px;max-height:100px;transition:border-color .2s;overflow-y:auto}
+.chat-input:focus{border-color:var(--brand)}
+.chat-send-btn{height:42px;width:44px;background:var(--brand);border:none;border-radius:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:background .2s}
+.chat-send-btn:hover{background:var(--brand-dark)}
+.chat-send-btn svg{width:17px;height:17px;color:#fff}
+
+/* ═══ Admin Page ═══ */
+#adminPage{display:none;min-height:100vh;background:var(--bg)}
+.admin-layout{display:flex;min-height:100vh}
+.admin-sidebar{width:var(--sidebar);background:#fff;border-right:1px solid var(--border);position:fixed;top:0;left:0;height:100vh;display:flex;flex-direction:column;z-index:200;overflow-y:auto}
+.admin-main{margin-left:var(--sidebar);padding-top:60px;flex:1}
+.admin-topbar{position:fixed;top:0;left:var(--sidebar);right:0;height:60px;background:#fff;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 24px;z-index:100}
+
+@media(max-width:900px){
+  .comm-contacts-grid{grid-template-columns:1fr 1fr}
+  .loan-type-btns{grid-template-columns:1fr 1fr}
+}
+@media(max-width:600px){
+  .comm-contacts-grid{grid-template-columns:1fr}
+  .bank-tab-bar{gap:5px}
+  .bank-tab{padding:6px 11px;font-size:11.5px}
+}
+
+</style>
+</head>
+<body>
+
+
+<!-- LOGIN PAGE -->
+<div id="loginPage">
+  <div class="left">
+    <div class="blob" style="width:450px;height:450px;right:-120px;top:-130px"></div>
+    <div class="blob" style="width:280px;height:280px;left:-70px;bottom:80px"></div>
+    <a href="#" class="l-logo">
+      <div class="l-logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <span class="l-logo-name">DSA <em>Naidu</em></span>
+    </a>
+    <div class="l-hero">
+      <div class="l-badge"><span class="l-dot"></span>#1 CRM for Loan DSAs in India</div>
+      <h1 class="l-h1">Grow Your Loan<br>Business with<br><u>Smart CRM</u></h1>
+      <p class="l-sub">Track every lead, manage bank partners, calculate EMIs and earn more commission — all in one place.</p>
+      <div class="stats">
+        <div class="s-card"><div class="s-num">12K+</div><div class="s-lbl">DSA Users</div></div>
+        <div class="s-card"><div class="s-num">₹840Cr</div><div class="s-lbl">Loans Tracked</div></div>
+        <div class="s-card"><div class="s-num">46+</div><div class="s-lbl">Bank Partners</div></div>
+      </div>
+    </div>
+    <div class="feats">
+      <div class="feat"><div class="feat-tick"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" width="11" height="11"><polyline points="2,6 5,9 10,3"/></svg></div>Lead tracking with real-time status updates</div>
+      <div class="feat"><div class="feat-tick"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" width="11" height="11"><polyline points="2,6 5,9 10,3"/></svg></div>Bank partner management &amp; AI policy search</div>
+      <div class="feat"><div class="feat-tick"><svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" width="11" height="11"><polyline points="2,6 5,9 10,3"/></svg></div>EMI calculator with full repayment schedule</div>
+    </div>
+    <div class="testi">
+      <p class="testi-q">"DSA Naidu CRM transformed how I manage my leads. Commission tracking alone saves me 2 hours every day!"</p>
+      <div class="testi-author">
+        <div class="testi-av">RK</div>
+        <div><div class="testi-name">Ramesh Kumar</div><div class="testi-role">Independent DSA · Hyderabad · 8 yrs experience</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="right">
+    <a href="#" class="r-logo">
+      <div class="r-logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <span class="r-logo-name">DSA <em>Naidu</em></span>
+    </a>
+
+    <!-- 3 Login Tabs -->
+    <div class="login-tabs">
+      <button class="login-tab active" onclick="setLoginMode('login')">🔐 Login</button>
+      <button class="login-tab" onclick="setLoginMode('register')">📝 Register</button>
+      <button class="login-tab" onclick="setLoginMode('admin')">👑 Admin</button>
+    </div>
+
+    <!-- ── LOGIN PANEL ── -->
+    <div class="login-panel active" id="lmt-login">
+      <h2 class="r-title">Welcome back!</h2>
+      <p class="r-sub">Enter your mobile &amp; password to access your dashboard.<br><a onclick="setLoginMode('register')" style="cursor:pointer">New user? Register here</a></p>
+      <div class="field">
+        <label>Mobile Number <span style="color:var(--red)">*</span></label>
+        <input type="tel" id="loginMobile" placeholder="10-digit mobile number" maxlength="10" inputmode="numeric" oninput="this.value=this.value.replace(/\D/g,\'\')">
+      </div>
+      <div class="field">
+        <label>Password <span style="color:var(--red)">*</span></label>
+        <input type="password" id="loginPwd" placeholder="Enter your password" onkeydown="if(event.key===\'Enter\')loginWithPwd()">
+      </div>
+      <button class="btn btn-primary" onclick="loginWithPwd()" style="width:100%;height:46px;margin-bottom:14px">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="15" height="15"><rect x="3" y="7" width="10" height="8" rx="1.5"/><path d="M5 7V5a3 3 0 016 0v2"/></svg>
+        Login to Dashboard
+      </button>
+      <div class="divider"><div class="divider-line"></div><div class="divider-txt">or try demo</div><div class="divider-line"></div></div>
+      <button class="btn btn-outline" onclick="loginDemo()" style="width:100%;height:44px">🚀 Try Demo (No Login Required)</button>
+    </div>
+
+    <!-- ── REGISTER PANEL ── -->
+    <div class="login-panel" id="lmt-register">
+      <h2 class="r-title">Create Account</h2>
+      <p class="r-sub">Register as a DSA / Connector. <a onclick="setLoginMode('login')" style="cursor:pointer">Already registered? Login</a></p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+        <div class="field" style="margin:0"><label>Full Name <span style="color:var(--red)">*</span></label><input type="text" id="reg_name" placeholder="Your full name"></div>
+        <div class="field" style="margin:0"><label>Mobile <span style="color:var(--red)">*</span></label><input type="tel" id="reg_mobile" placeholder="10-digit mobile" maxlength="10"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+        <div class="field" style="margin:0"><label>Password <span style="color:var(--red)">*</span></label><input type="password" id="reg_pwd" placeholder="Min 6 characters"></div>
+        <div class="field" style="margin:0"><label>Confirm Password <span style="color:var(--red)">*</span></label><input type="password" id="reg_pwd2" placeholder="Repeat password"></div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:12px">
+        <div class="field" style="margin:0"><label>DSA Type</label>
+          <select id="reg_type"><option>Individual DSA</option><option>Franchise DSA</option><option>Connector</option><option>Sub-DSA</option></select>
+        </div>
+        <div class="field" style="margin:0"><label>City</label><input type="text" id="reg_city" placeholder="Your city"></div>
+      </div>
+      <div class="field" style="margin-top:12px"><label>Email (optional)</label><input type="email" id="reg_email" placeholder="your@email.com"></div>
+      <button class="btn btn-primary" onclick="registerDSA()" style="width:100%;height:46px;margin-top:4px">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="15" height="15"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>
+        Create Account
+      </button>
+      <div id="regStatus" style="display:none;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:13px;font-weight:600;text-align:center"></div>
+    </div>
+
+    <!-- ── ADMIN PANEL ── -->
+    <div class="login-panel" id="lmt-admin">
+      <h2 class="r-title">Admin Login</h2>
+      <p class="r-sub">Approve / reject DSA registrations and manage all connectors.</p>
+      <div class="info-banner" style="margin-bottom:18px">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" width="16" height="16"><circle cx="8" cy="8" r="6.5"/><path d="M8 7.5v4M8 5.5h.01"/></svg>
+        <span>Default: Mobile <strong>9999999999</strong> · Password <strong>admin123</strong></span>
+      </div>
+      <div class="field"><label>Admin Mobile <span style="color:var(--red)">*</span></label><input type="tel" id="adminMobile" placeholder="Admin mobile number" maxlength="10"></div>
+      <div class="field"><label>Admin Password <span style="color:var(--red)">*</span></label><input type="password" id="adminPwd" placeholder="Admin password" onkeydown="if(event.key===\'Enter\')loginAdmin()"></div>
+      <button class="btn btn-primary" onclick="loginAdmin()" style="width:100%;height:46px">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" width="15" height="15"><path d="M8 1l7 4v6l-7 4-7-4V5z"/></svg>
+        Enter Admin Panel
+      </button>
+    </div>
+
+  </div>
+</div>
+
+
+<div id="dashPage">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="#" class="sb-logo">
+      <div class="sb-logo-box"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+      <span class="sb-logo-name">DSA <em>Naidu</em></span>
+    </a>
+    <div class="sb-section">
+      <div class="sb-section-lbl">Main</div>
+      <a href="#" class="sb-item active" id="nav-dashboard" onclick="navTo('dashboard');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="1" width="6" height="6" rx="1.5"/><rect x="9" y="1" width="6" height="6" rx="1.5"/><rect x="1" y="9" width="6" height="6" rx="1.5"/><rect x="9" y="9" width="6" height="6" rx="1.5"/></svg>Dashboard</a>
+      <a href="#" class="sb-item" id="nav-leads" onclick="navTo('leads');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>Leads <span style="margin-left:auto;background:var(--red);color:#fff;font-size:10px;font-weight:700;border-radius:100px;padding:1px 6px;font-family:'Plus Jakarta Sans',sans-serif">8</span></a>
+      <a href="#" class="sb-item" id="nav-applications" onclick="navTo('applications');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H2v12h12V2z"/><path d="M5 6h6M5 9h4"/></svg>Applications</a>
+      <a href="#" class="sb-item" id="nav-commissions" onclick="navTo('commissions');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 1v14M12 5H6a3 3 0 000 6h4a3 3 0 010 6H4"/></svg>Commissions <span style="margin-left:auto;background:var(--green);color:#fff;font-size:10px;font-weight:700;border-radius:100px;padding:1px 6px;font-family:'Plus Jakarta Sans',sans-serif">New</span></a>
+      <a href="#" class="sb-item" id="nav-followups" onclick="navTo('followups');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="4" width="14" height="10" rx="1.5"/><path d="M5 4V2M11 4V2M1 8h14"/></svg>Follow-ups</a>
+    </div>
+    <div class="sb-section">
+      <div class="sb-section-lbl">Tools</div>
+      <a href="#" class="sb-item" id="nav-emicalc" onclick="navTo('emicalc');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 2h12l-1 9H3L2 2z"/><path d="M5 11l-1 3M11 11l1 3M6 11v3M10 11v3"/></svg>EMI Calculator</a>
+      <a href="#" class="sb-item" id="nav-reports" onclick="navTo('reports');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 4v4l3 3"/></svg>Reports</a>
+      <a href="#" class="sb-item" id="nav-documents" onclick="navTo('documents');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 4h12M2 8h9M2 12h6"/></svg>Documents</a>
+    </div>
+    <div class="sb-section">
+      <div class="sb-section-lbl">Banks</div>
+      <a href="#" class="sb-item" id="nav-banks" onclick="navTo('banks');return false"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 14V6l6-4 6 4v8M6 14v-4h4v4"/></svg>Bank Partners</a>
+    </div>
+    <div class="sb-footer">
+      <div class="sb-user">
+        <div class="sb-av" id="sbAv">RK</div>
+        <div><div class="sb-uname" id="sbName">Rajesh Kumar</div><div class="sb-urole">Individual DSA · Mumbai</div></div>
+      </div>
+      <a href="#" class="sb-item" style="margin-top:4px;color:var(--red)" onclick="logOut()"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 2H2v12h4M10 5l4 3-4 3M6 8h8"/></svg>Sign Out</a>
+    </div>
+  </div>
+
+  <!-- Topbar -->
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="topbar-title" id="topbarTitle">Dashboard Overview</div>
+      <div class="topbar-sub" id="topbarDate">Monday, 13 April 2026</div>
+    </div>
+    <div class="topbar-right">
+      <button class="tb-icon-btn" title="Search"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="7" cy="7" r="5"/><path d="M11 11l3 3"/></svg></button>
+      <button class="tb-icon-btn" title="Notifications"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 1a5 5 0 015 5v3l2 2H1l2-2V6a5 5 0 015-5zM6.5 14a1.5 1.5 0 003 0"/></svg><div class="notif-dot"></div></button>
+      <button class="tb-icon-btn" title="WhatsApp"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 8A6 6 0 112 8a6 6 0 0112 0z"/><path d="M6 8.5c.8 1.5 2 2.5 3.5 3l1-1.5c-.5-.3-1-.6-1.5-.5-.5-1-1-2-1.5-2.5L6 8.5z"/></svg></button>
+      <button class="tb-add-btn" onclick="void(0)"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 2v12M2 8h12"/></svg>Add Lead</button>
+    </div>
+  </div>
+
+  <!-- Main content -->
+  <div class="main">
+    <div id="pg-dashboard">
+    <div class="content">
+
+      <!-- Greeting -->
+      <div class="greeting">
+        <div class="greet-text">
+          <h2 id="greetName">Good morning, Rajesh! 👋</h2>
+          <p>You have <strong style="color:#fff">8 leads</strong> waiting for follow-up today. Keep it up!</p>
+        </div>
+        <div class="greet-badge"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M8 1l1.9 3.8L14 5.6l-3 2.9.7 4.1L8 10.5l-3.7 2.1.7-4.1-3-2.9 4.1-.8z"/></svg>Pro Member</div>
+      </div>
+
+      <!-- Pipeline -->
+      <div class="pipeline">
+        <div class="pipe-stage"><div class="pipe-lbl">New Leads</div><div class="pipe-num" style="color:#1a56db">24</div><div class="pipe-bar"><div class="pipe-bar-fill" style="background:#1a56db;width:80%"></div></div></div>
+        <div class="pipe-stage"><div class="pipe-lbl">Docs Pending</div><div class="pipe-num" style="color:#f97316">11</div><div class="pipe-bar"><div class="pipe-bar-fill" style="background:#f97316;width:46%"></div></div></div>
+        <div class="pipe-stage"><div class="pipe-lbl">Verification</div><div class="pipe-num" style="color:#d97706">7</div><div class="pipe-bar"><div class="pipe-bar-fill" style="background:#eab308;width:29%"></div></div></div>
+        <div class="pipe-stage"><div class="pipe-lbl">Approved</div><div class="pipe-num" style="color:#059669">9</div><div class="pipe-bar"><div class="pipe-bar-fill" style="background:#059669;width:38%"></div></div></div>
+        <div class="pipe-stage"><div class="pipe-lbl">Disbursed</div><div class="pipe-num" style="color:#16a34a">18</div><div class="pipe-bar"><div class="pipe-bar-fill" style="background:#22c55e;width:75%"></div></div></div>
+        <div class="pipe-stage"><div class="pipe-lbl">Rejected</div><div class="pipe-num" style="color:#ef4444">4</div><div class="pipe-bar"><div class="pipe-bar-fill" style="background:#ef4444;width:17%"></div></div></div>
+      </div>
+
+      <!-- KPI cards -->
+      <div class="kpi-grid">
+        <div class="kpi-card blue">
+          <div class="kpi-icon blue"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></div>
+          <div class="kpi-lbl">Total Leads</div>
+          <div class="kpi-val">73</div>
+          <div class="kpi-change up"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9V3M3 6l3-3 3 3"/></svg>+12 this month</div>
+        </div>
+        <div class="kpi-card green">
+          <div class="kpi-icon green"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 1v14M12 5H6a3 3 0 000 6h4a3 3 0 010 6H4"/></svg></div>
+          <div class="kpi-lbl">Commission Earned</div>
+          <div class="kpi-val">₹1.84L</div>
+          <div class="kpi-change up"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9V3M3 6l3-3 3 3"/></svg>+₹24,000 vs last month</div>
+        </div>
+        <div class="kpi-card orange">
+          <div class="kpi-icon orange"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M14 2H2v12h12V2zM5 6h6M5 9h4"/></svg></div>
+          <div class="kpi-lbl">Loan Disbursed</div>
+          <div class="kpi-val">₹2.3Cr</div>
+          <div class="kpi-change up"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 9V3M3 6l3-3 3 3"/></svg>18 cases this month</div>
+        </div>
+        <div class="kpi-card red">
+          <div class="kpi-icon red"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 1a5 5 0 015 5v3l2 2H1l2-2V6a5 5 0 015-5z"/><path d="M6.5 14a1.5 1.5 0 003 0"/></svg></div>
+          <div class="kpi-lbl">Pending Follow-ups</div>
+          <div class="kpi-val">8</div>
+          <div class="kpi-change down"><svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 3v6M3 6l3 3 3-3"/></svg>Due today</div>
+        </div>
+      </div>
+
+      <!-- Lead table + Quick actions -->
+      <div class="section-row">
+        <div class="dash-card">
+          <div class="card-head">
+            <div><div class="card-title">Recent Leads</div><div class="card-sub">All active leads across banks</div></div>
+            <a href="#" class="card-action" onclick="return false">View all →</a>
+          </div>
+          <div style="padding:0 20px">
+            <table class="lead-table">
+              <thead><tr><th>Customer</th><th>Loan Type</th><th>Amount</th><th>Bank</th><th>Status</th><th>Date</th></tr></thead>
+              <tbody>
+                <tr>
+                  <td><div class="lead-name">Priya Sharma</div><div class="lead-phone">+91 98765 43210</div></td>
+                  <td>Home Loan</td>
+                  <td class="lead-amount">₹45L</td>
+                  <td><div class="bank-logo"><div class="bank-dot" style="background:#004C97">SBI</div>State Bank</div></td>
+                  <td><span class="badge approved">Approved</span></td>
+                  <td style="color:var(--text3)">12 Apr</td>
+                </tr>
+                <tr>
+                  <td><div class="lead-name">Amit Verma</div><div class="lead-phone">+91 87654 32109</div></td>
+                  <td>Business Loan</td>
+                  <td class="lead-amount">₹18L</td>
+                  <td><div class="bank-logo"><div class="bank-dot" style="background:#1a56db">HDFC</div>HDFC Bank</div></td>
+                  <td><span class="badge docs">Docs Pending</span></td>
+                  <td style="color:var(--text3)">11 Apr</td>
+                </tr>
+                <tr>
+                  <td><div class="lead-name">Sunita Patel</div><div class="lead-phone">+91 76543 21098</div></td>
+                  <td>Personal Loan</td>
+                  <td class="lead-amount">₹5L</td>
+                  <td><div class="bank-logo"><div class="bank-dot" style="background:#f97316">ICICI</div>ICICI Bank</div></td>
+                  <td><span class="badge disbursed">Disbursed</span></td>
+                  <td style="color:var(--text3)">10 Apr</td>
+                </tr>
+                <tr>
+                  <td><div class="lead-name">Ravi Nair</div><div class="lead-phone">+91 65432 10987</div></td>
+                  <td>LAP</td>
+                  <td class="lead-amount">₹80L</td>
+                  <td><div class="bank-logo"><div class="bank-dot" style="background:#6d28d9">Axis</div>Axis Bank</div></td>
+                  <td><span class="badge verify">Verification</span></td>
+                  <td style="color:var(--text3)">09 Apr</td>
+                </tr>
+                <tr>
+                  <td><div class="lead-name">Meena Joshi</div><div class="lead-phone">+91 54321 09876</div></td>
+                  <td>Car Loan</td>
+                  <td class="lead-amount">₹8L</td>
+                  <td><div class="bank-logo"><div class="bank-dot" style="background:#dc2626">Kotak</div>Kotak Bank</div></td>
+                  <td><span class="badge new">New</span></td>
+                  <td style="color:var(--text3)">08 Apr</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Right column -->
+        <div style="display:flex;flex-direction:column;gap:16px">
+          <!-- Quick Actions -->
+          <div class="dash-card">
+            <div class="card-head"><div class="card-title">Quick Actions</div></div>
+            <div class="qa-grid">
+              <div class="qa-btn"><div class="qa-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M13 3l2 2-2 2"/></svg></div><div class="qa-lbl">Add Lead</div></div>
+              <div class="qa-btn"><div class="qa-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M8 1v14M12 5H6a3 3 0 000 6h4a3 3 0 010 6H4"/></svg></div><div class="qa-lbl">Commission</div></div>
+              <div class="qa-btn"><div class="qa-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 2h12l-1 9H3L2 2z"/><path d="M5 11l-1 3M11 11l1 3"/></svg></div><div class="qa-lbl">EMI Calc</div></div>
+              <div class="qa-btn"><div class="qa-icon"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="1" y="4" width="14" height="10" rx="1.5"/><path d="M5 4V2M11 4V2M1 8h14"/></svg></div><div class="qa-lbl">Follow-up</div></div>
+            </div>
+          </div>
+
+          <!-- Activity feed -->
+          <div class="dash-card" style="flex:1">
+            <div class="card-head"><div class="card-title">Recent Activity</div></div>
+            <div class="activity-item"><div class="act-icon" style="background:var(--green-bg)"><svg viewBox="0 0 14 14" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" width="14" height="14"><polyline points="2,7 5.5,10.5 12,4"/></svg></div><div><div class="act-text"><strong>Sunita Patel</strong> loan disbursed — ₹5L ICICI</div><div class="act-time">2 hours ago</div></div></div>
+            <div class="activity-item"><div class="act-icon" style="background:var(--brand-light)"><svg viewBox="0 0 14 14" fill="none" stroke="#1a56db" stroke-width="2" stroke-linecap="round" width="14" height="14"><circle cx="7" cy="5" r="3"/><path d="M2 13c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg></div><div><div class="act-text">New lead added — <strong>Meena Joshi</strong>, Car Loan ₹8L</div><div class="act-time">5 hours ago</div></div></div>
+            <div class="activity-item"><div class="act-icon" style="background:#fff7ed"><svg viewBox="0 0 14 14" fill="none" stroke="#f97316" stroke-width="2" stroke-linecap="round" width="14" height="14"><circle cx="7" cy="7" r="5.5"/><path d="M7 4v3.5l2 1.5"/></svg></div><div><div class="act-text">Follow-up due — <strong>Amit Verma</strong> docs pending</div><div class="act-time">Yesterday</div></div></div>
+            <div class="activity-item"><div class="act-icon" style="background:var(--green-bg)"><svg viewBox="0 0 14 14" fill="none" stroke="#059669" stroke-width="2" stroke-linecap="round" width="14" height="14"><path d="M7 1v12M10 4H5a2.5 2.5 0 000 5h4a2.5 2.5 0 010 5H4"/></svg></div><div><div class="act-text">Commission credited — <strong>₹18,500</strong> from HDFC</div><div class="act-time">Yesterday</div></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Commission breakdown -->
+      <div class="section-row full" style="margin-bottom:24px">
+        <div class="dash-card">
+          <div class="card-head">
+            <div><div class="card-title">Commission Breakdown — This Month</div><div class="card-sub">Top earning leads by commission amount</div></div>
+            <a href="#" class="card-action" onclick="return false">Full report →</a>
+          </div>
+          <div>
+            <div class="comm-item"><div class="comm-info"><div class="comm-name">Priya Sharma — Home Loan</div><div class="comm-bank">State Bank of India · ₹45L disbursed</div></div><div class="comm-bar-wrap"><div class="comm-bar-bg"><div class="comm-bar-fill" style="width:90%"></div></div></div><div class="comm-amt">₹45,000</div></div>
+            <div class="comm-item"><div class="comm-info"><div class="comm-name">Ravi Nair — LAP</div><div class="comm-bank">Axis Bank · ₹80L in verification</div></div><div class="comm-bar-wrap"><div class="comm-bar-bg"><div class="comm-bar-fill" style="width:75%"></div></div></div><div class="comm-amt">₹37,500</div></div>
+            <div class="comm-item"><div class="comm-info"><div class="comm-name">Amit Verma — Business Loan</div><div class="comm-bank">HDFC Bank · ₹18L docs pending</div></div><div class="comm-bar-wrap"><div class="comm-bar-bg"><div class="comm-bar-fill" style="width:55%"></div></div></div><div class="comm-amt">₹27,000</div></div>
+            <div class="comm-item"><div class="comm-info"><div class="comm-name">Sunita Patel — Personal Loan</div><div class="comm-bank">ICICI Bank · ₹5L disbursed</div></div><div class="comm-bar-wrap"><div class="comm-bar-bg"><div class="comm-bar-fill" style="width:30%"></div></div></div><div class="comm-amt">₹15,000</div></div>
+            <div class="comm-item"><div class="comm-info"><div class="comm-name">Meena Joshi — Car Loan</div><div class="comm-bank">Kotak Bank · ₹8L new lead</div></div><div class="comm-bar-wrap"><div class="comm-bar-bg"><div class="comm-bar-fill" style="width:15%"></div></div></div><div class="comm-amt">₹8,000</div></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    </div><!-- /pg-dashboard -->
+
+    <!-- ═══ PAGE: LEADS ═══ -->
+
+<div id="pg-leads" class="dash-subpage" style="display:none">
+      <div class="content">
+        <!-- ADD LEAD MODAL -->
+        <div id="leadModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:center;justify-content:center">
+          <div style="background:#fff;border-radius:16px;width:560px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;color:var(--text)">➕ Add New Lead</div>
+              <button onclick="closeLeadModal()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--text3);line-height:1">✕</button>
+            </div>
+            <div style="padding:24px;display:flex;flex-direction:column;gap:14px">
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div class="field" style="margin:0"><label>Customer Name <span style="color:var(--red)">*</span></label><input type="text" id="lf_name" placeholder="Full name"></div>
+                <div class="field" style="margin:0"><label>Mobile Number <span style="color:var(--red)">*</span></label><input type="tel" id="lf_phone" placeholder="10-digit mobile" maxlength="10"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div class="field" style="margin:0"><label>Email</label><input type="email" id="lf_email" placeholder="email@example.com"></div>
+                <div class="field" style="margin:0"><label>City</label><input type="text" id="lf_city" placeholder="Customer city"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div class="field" style="margin:0"><label>Loan Type <span style="color:var(--red)">*</span></label><select id="lf_ltype"><option value="">Select</option><option>Home Loan</option><option>Personal Loan</option><option>Business Loan</option><option>Loan Against Property</option><option>Car Loan</option><option>Education Loan</option></select></div>
+                <div class="field" style="margin:0"><label>Loan Amount (₹) <span style="color:var(--red)">*</span></label><input type="number" id="lf_amount" placeholder="e.g. 5000000"></div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+                <div class="field" style="margin:0"><label>Preferred Bank</label><select id="lf_bank"><option value="">Any Bank</option><option>SBI</option><option>HDFC Bank</option><option>ICICI Bank</option><option>Axis Bank</option><option>Kotak Bank</option><option>PNB</option><option>Bank of Baroda</option></select></div>
+                <div class="field" style="margin:0"><label>Annual Income (₹)</label><input type="number" id="lf_income" placeholder="e.g. 600000"></div>
+              </div>
+              <div class="field" style="margin:0"><label>Notes / Remarks</label><textarea id="lf_notes" placeholder="Any additional information..." style="width:100%;border:1.5px solid var(--border);border-radius:10px;padding:10px 14px;font-size:14px;font-family:'DM Sans',sans-serif;resize:vertical;min-height:70px;outline:none"></textarea></div>
+              <div style="display:flex;gap:10px;margin-top:4px">
+                <button onclick="saveNewLead()" style="flex:1;height:44px;background:var(--brand);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">Save Lead</button>
+                <button onclick="closeLeadModal()" style="flex:1;height:44px;background:#fff;color:var(--text);border:1.5px solid var(--border2);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- VIEW LEAD MODAL -->
+        <div id="viewLeadModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:center;justify-content:center">
+          <div style="background:#fff;border-radius:16px;width:520px;max-width:95vw;max-height:90vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--border)">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:16px;color:var(--text)">Lead Details</div>
+              <button onclick="closeViewLead()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--text3);line-height:1">✕</button>
+            </div>
+            <div id="viewLeadBody" style="padding:24px"></div>
+          </div>
+        </div>
+
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+          <div><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:var(--text)">Leads Queue</h2><p id="leadsCount" style="font-size:13px;color:var(--text3);margin-top:2px">0 total leads</p></div>
+          <button onclick="openLeadModal()" class="tb-add-btn" style="width:auto;padding:0 18px"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" width="13" height="13"><path d="M8 2v12M2 8h12"/></svg>Add New Lead</button>
+        </div>
+        <!-- Filters -->
+        <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap">
+          <input type="text" id="leadSearch" oninput="renderLeads()" placeholder="🔍  Search name / mobile..." style="height:38px;border:1.5px solid var(--border);border-radius:8px;padding:0 12px;font-size:13px;outline:none;font-family:'DM Sans',sans-serif;width:220px">
+          <select id="leadStatusFilter" onchange="renderLeads()" style="height:38px;border:1.5px solid var(--border);border-radius:8px;padding:0 10px;font-size:13px;outline:none;background:#fff;font-family:'DM Sans',sans-serif"><option value="">All Status</option><option>New</option><option>Docs Pending</option><option>Verification</option><option>Approved</option><option>Disbursed</option><option>Rejected</option></select>
+          <select id="leadTypeFilter" onchange="renderLeads()" style="height:38px;border:1.5px solid var(--border);border-radius:8px;padding:0 10px;font-size:13px;outline:none;background:#fff;font-family:'DM Sans',sans-serif"><option value="">All Loan Types</option><option>Home Loan</option><option>Personal Loan</option><option>Business Loan</option><option>Loan Against Property</option><option>Car Loan</option><option>Education Loan</option></select>
+          <select id="leadBankFilter" onchange="renderLeads()" style="height:38px;border:1.5px solid var(--border);border-radius:8px;padding:0 10px;font-size:13px;outline:none;background:#fff;font-family:'DM Sans',sans-serif"><option value="">All Banks</option><option>SBI</option><option>HDFC Bank</option><option>ICICI Bank</option><option>Axis Bank</option><option>Kotak Bank</option></select>
+        </div>
+        <div class="dash-card">
+          <div id="leadsTableWrap" style="overflow-x:auto">
+            <table class="lead-table" style="width:100%;min-width:700px">
+              <thead><tr><th style="padding:14px 20px 10px">Customer</th><th>Mobile</th><th>Loan Type</th><th>Amount</th><th>Bank</th><th>Status</th><th>Added</th><th>Action</th></tr></thead>
+              <tbody id="leadsTableBody"></tbody>
+            </table>
+            <div id="leadsEmpty" style="display:none;text-align:center;padding:48px 20px;color:var(--text3)">
+              <div style="font-size:40px;margin-bottom:12px">📋</div>
+              <div style="font-weight:600;font-size:15px;color:var(--text2);margin-bottom:6px">No leads yet</div>
+              <div style="font-size:13px">Click "+ Add New Lead" to get started</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE: APPLICATIONS ═══ -->
+    <div id="pg-applications" class="dash-subpage" style="display:none">
+      <div class="content">
+        <div style="margin-bottom:18px"><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:var(--text)">Application Tracker</h2><p style="font-size:13px;color:var(--text3);margin-top:2px">Click any queue card to filter applications below</p></div>
+        <!-- Filter Queue Cards -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px">
+          <div id="appq-all" onclick="filterApps('all')" style="cursor:pointer;border-radius:12px;padding:16px 18px;background:#fff;border:2px solid var(--brand);transition:all .2s">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--brand);margin-bottom:6px">All Applications</div>
+            <div id="appCount-all" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--text)">0</div>
+          </div>
+          <div id="appq-approved" onclick="filterApps('Approved')" style="cursor:pointer;border-radius:12px;padding:16px 18px;background:#fff;border:2px solid var(--border);transition:all .2s">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--green);margin-bottom:6px">✅ Approved</div>
+            <div id="appCount-approved" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--green)">0</div>
+          </div>
+          <div id="appq-inprocess" onclick="filterApps('In Process')" style="cursor:pointer;border-radius:12px;padding:16px 18px;background:#fff;border:2px solid var(--border);transition:all .2s">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--yellow);margin-bottom:6px">⏳ In Process</div>
+            <div id="appCount-inprocess" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--yellow)">0</div>
+          </div>
+          <div id="appq-rejected" onclick="filterApps('Rejected')" style="cursor:pointer;border-radius:12px;padding:16px 18px;background:#fff;border:2px solid var(--border);transition:all .2s">
+            <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--red);margin-bottom:6px">❌ Rejected</div>
+            <div id="appCount-rejected" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--red)">0</div>
+          </div>
+        </div>
+        <!-- Application Details Modal -->
+        <div id="appModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:center;justify-content:center">
+          <div style="background:#fff;border-radius:16px;width:540px;max-width:95vw;max-height:88vh;overflow-y:auto;box-shadow:0 20px 60px rgba(0,0,0,.25)">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--border)">
+              <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px">Application Details</div>
+              <button onclick="document.getElementById('appModal').style.display='none'" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--text3)">✕</button>
+            </div>
+            <div id="appModalBody" style="padding:22px"></div>
+          </div>
+        </div>
+        <div class="dash-card">
+          <div class="card-head">
+            <div><div class="card-title" id="appTableTitle">All Applications</div></div>
+            <button onclick="filterApps('all')" style="font-size:12px;color:var(--brand);font-weight:600;background:none;border:none;cursor:pointer">Show All</button>
+          </div>
+          <div style="overflow-x:auto">
+            <table class="lead-table" style="width:100%;min-width:750px">
+              <thead><tr><th style="padding:12px 20px 8px">Applicant</th><th>Loan Type</th><th>Amount</th><th>Bank</th><th>Status</th><th>Submitted</th><th>Expected</th><th>Action</th></tr></thead>
+              <tbody id="appTableBody"></tbody>
+            </table>
+            <div id="appEmpty" style="display:none;text-align:center;padding:48px 20px;color:var(--text3)"><div style="font-size:40px;margin-bottom:12px">📂</div><div style="font-weight:600;font-size:15px;color:var(--text2)">No applications in this queue</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE: COMMISSIONS ═══ -->
+    <div id="pg-commissions" class="dash-subpage" style="display:none">
+      <div class="content">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+          <div><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:var(--text)">Commission Tracker</h2><p style="font-size:13px;color:var(--text3);margin-top:2px">Track all earnings from bank payouts</p></div>
+          <button onclick="downloadCommPDF()" class="tb-add-btn" style="width:auto;padding:0 18px;background:var(--green)">⬇ Download PDF</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px">
+          <div class="kpi-card green"><div class="kpi-lbl">Total Earned (YTD)</div><div class="kpi-val">₹4.2L</div><div class="kpi-change up">+22% vs last year</div></div>
+          <div class="kpi-card blue"><div class="kpi-lbl">This Month</div><div class="kpi-val">₹1.84L</div><div class="kpi-change up">+₹24K vs Mar</div></div>
+          <div class="kpi-card orange"><div class="kpi-lbl">Pending Payout</div><div class="kpi-val">₹62K</div><div class="kpi-change up" style="color:var(--yellow)">3 invoices pending</div></div>
+          <div class="kpi-card blue"><div class="kpi-lbl">Avg per Loan</div><div class="kpi-val">₹18.5K</div><div class="kpi-change up">Based on 18 loans</div></div>
+        </div>
+        <div class="dash-card" id="commissionTableCard">
+          <div class="card-head"><div class="card-title">Commission History</div></div>
+          <div id="commTableWrap" style="overflow-x:auto">
+            <table class="lead-table" style="width:100%;min-width:700px" id="commTable">
+              <thead><tr><th style="padding:12px 20px 8px">Customer</th><th>Loan Type</th><th>Loan Amount</th><th>Bank</th><th>Rate</th><th>Commission</th><th>Credited On</th><th>Status</th></tr></thead>
+              <tbody id="commTableBody"></tbody>
+            </table>
+            <div id="commEmpty" style="display:none;text-align:center;padding:48px 20px;color:var(--text3)"><div style="font-size:40px;margin-bottom:12px">💰</div><div style="font-weight:600;font-size:15px;color:var(--text2)">No commission records yet</div><div style="font-size:13px">Commissions appear when leads are disbursed</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE: FOLLOW-UPS ═══ -->
+    <div id="pg-followups" class="dash-subpage" style="display:none">
+      <!-- SCHEDULE MODAL -->
+      <div id="followupModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:center;justify-content:center">
+        <div style="background:#fff;border-radius:16px;width:480px;max-width:95vw;box-shadow:0 20px 60px rgba(0,0,0,.25)">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--border)">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px">📅 Schedule Follow-up</div>
+            <button onclick="closeFollowupModal()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--text3)">✕</button>
+          </div>
+          <div style="padding:22px;display:flex;flex-direction:column;gap:13px">
+            <div class="field" style="margin:0"><label>Customer Name <span style="color:var(--red)">*</span></label><input type="text" id="fu_name" placeholder="Customer name"></div>
+            <div class="field" style="margin:0"><label>Mobile Number</label><input type="tel" id="fu_phone" placeholder="10-digit mobile" maxlength="10"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>Follow-up Date <span style="color:var(--red)">*</span></label><input type="date" id="fu_date"></div>
+              <div class="field" style="margin:0"><label>Time</label><input type="time" id="fu_time"></div>
+            </div>
+            <div class="field" style="margin:0"><label>Purpose <span style="color:var(--red)">*</span></label><select id="fu_purpose"><option value="">Select purpose</option><option>Initial Call</option><option>Document Collection</option><option>Verification Follow-up</option><option>Bank Query Response</option><option>Disbursement Update</option><option>Commission Follow-up</option><option>Re-application Discussion</option><option>Other</option></select></div>
+            <div class="field" style="margin:0"><label>Loan Type</label><select id="fu_ltype"><option value="">Select</option><option>Home Loan</option><option>Personal Loan</option><option>Business Loan</option><option>LAP</option><option>Car Loan</option></select></div>
+            <div class="field" style="margin:0"><label>Notes</label><textarea id="fu_notes" placeholder="What to discuss..." style="width:100%;border:1.5px solid var(--border);border-radius:10px;padding:10px 14px;font-size:13px;font-family:'DM Sans',sans-serif;resize:vertical;min-height:60px;outline:none"></textarea></div>
+            <div style="display:flex;gap:10px;margin-top:4px">
+              <button onclick="saveFollowup()" style="flex:1;height:44px;background:var(--brand);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">Schedule</button>
+              <button onclick="closeFollowupModal()" style="flex:1;height:44px;background:#fff;color:var(--text);border:1.5px solid var(--border2);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+          <div><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:var(--text)">Follow-ups</h2><p id="fuSubtitle" style="font-size:13px;color:var(--text3);margin-top:2px">0 follow-ups scheduled</p></div>
+          <button onclick="openFollowupModal()" class="tb-add-btn" style="width:auto;padding:0 18px">📅 Schedule Follow-up</button>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="dash-card">
+            <div class="card-head"><div class="card-title">🔴 Due Today</div><div id="fuTodayCount" style="font-size:12px;color:var(--red);font-weight:600">0 tasks</div></div>
+            <div id="fuTodayList" style="padding:0 4px"><div style="text-align:center;padding:36px 20px;color:var(--text3)"><div style="font-size:32px;margin-bottom:8px">🎉</div><div style="font-size:13px;font-weight:500">No follow-ups due today</div></div></div>
+          </div>
+          <div class="dash-card">
+            <div class="card-head"><div class="card-title">📅 Upcoming (Next 7 Days)</div><div id="fuUpcomingCount" style="font-size:12px;color:var(--brand);font-weight:600">0 tasks</div></div>
+            <div id="fuUpcomingList" style="padding:0 4px"><div style="text-align:center;padding:36px 20px;color:var(--text3)"><div style="font-size:32px;margin-bottom:8px">📭</div><div style="font-size:13px;font-weight:500">No upcoming follow-ups</div></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE: EMI CALCULATOR ═══ -->
+    <div id="pg-emicalc" class="dash-subpage" style="display:none">
+      <div class="content">
+        <div style="margin-bottom:18px"><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:var(--text)">EMI Calculator</h2><p style="font-size:13px;color:var(--text3);margin-top:2px">Calculate monthly EMI and full repayment schedule</p></div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:20px">
+          <div class="dash-card">
+            <div class="card-head"><div class="card-title">Loan Details</div></div>
+            <div class="card-body">
+              <div class="field"><label>Loan Amount (₹)</label><input type="number" id="emiAmt" oninput="calcEMI()" value="2500000" min="1000"></div>
+              <div class="field"><label>Interest Rate (% per annum)</label><input type="number" id="emiRate" oninput="calcEMI()" step="0.05" value="8.5" min="0.1"></div>
+              <div class="field"><label>Loan Tenure</label>
+                <div style="display:flex;gap:8px">
+                  <input type="number" id="emiTenure" oninput="calcEMI()" value="20" min="1" style="flex:1;height:46px;border:1.5px solid var(--border);border-radius:10px;padding:0 14px;font-size:14px;outline:none;font-family:'DM Sans',sans-serif">
+                  <select id="emiTenureUnit" onchange="calcEMI()" style="width:110px;height:46px;border:1.5px solid var(--border);border-radius:10px;padding:0 10px;font-size:13px;outline:none;background:#fff;font-family:'DM Sans',sans-serif"><option value="years">Years</option><option value="months">Months</option></select>
+                </div>
+              </div>
+              <div class="field"><label>Loan Type</label><select id="emiType" onchange="calcEMI()" style="width:100%;height:46px;border:1.5px solid var(--border);border-radius:10px;padding:0 14px;font-size:14px;outline:none;background:#fff;font-family:'DM Sans',sans-serif"><option>Home Loan</option><option>Personal Loan</option><option>Business Loan</option><option>Car Loan</option><option>Loan Against Property</option></select></div>
+            </div>
+          </div>
+          <div class="dash-card">
+            <div class="card-head"><div class="card-title">Result Summary</div><button onclick="downloadEMI()" style="display:flex;align-items:center;gap:6px;background:var(--brand);color:#fff;border:none;border-radius:8px;padding:0 14px;height:32px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">⬇ Download</button></div>
+            <div class="card-body">
+              <div style="text-align:center;padding:10px 0 20px">
+                <div style="font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;color:var(--text3);margin-bottom:6px">Monthly EMI</div>
+                <div id="emiResult" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:40px;color:var(--brand)">₹21,693</div>
+              </div>
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px">
+                <div style="background:#f0f4f8;border-radius:10px;padding:12px;text-align:center"><div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px">Principal</div><div id="emiPrincipal" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--text)">₹25,00,000</div></div>
+                <div style="background:#fef2f2;border-radius:10px;padding:12px;text-align:center"><div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px">Total Interest</div><div id="emiInterest" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--red)">₹27,06,320</div></div>
+                <div style="background:var(--green-bg);border-radius:10px;padding:12px;text-align:center"><div style="font-size:10px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.3px;margin-bottom:4px">Total Payable</div><div id="emiTotal" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:13px;color:var(--green)">₹52,06,320</div></div>
+              </div>
+              <!-- Visual split bar -->
+              <div style="margin-top:16px">
+                <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--text3);margin-bottom:4px"><span>Principal</span><span>Interest</span></div>
+                <div style="height:10px;border-radius:5px;overflow:hidden;display:flex">
+                  <div id="emiBarP" style="background:#1a56db;transition:width .4s"></div>
+                  <div id="emiBarI" style="background:#ef4444;flex:1;transition:width .4s"></div>
+                </div>
+                <div style="display:flex;gap:14px;margin-top:6px">
+                  <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text3)"><div style="width:10px;height:10px;border-radius:2px;background:#1a56db"></div><span id="emiPct">48%</span> Principal</div>
+                  <div style="display:flex;align-items:center;gap:5px;font-size:11px;color:var(--text3)"><div style="width:10px;height:10px;border-radius:2px;background:#ef4444"></div><span id="emiIPct">52%</span> Interest</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Repayment Schedule -->
+        <div class="dash-card">
+          <div class="card-head">
+            <div><div class="card-title">Repayment Schedule</div><div class="card-sub" id="scheduleSubtitle">Year-wise breakup</div></div>
+            <div style="display:flex;gap:8px;align-items:center">
+              <div style="display:flex;background:#f3f4f6;border-radius:8px;padding:3px;gap:2px">
+                <button id="schedBtnYear" onclick="showSchedule('year')" style="padding:5px 12px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--brand);box-shadow:0 1px 3px rgba(0,0,0,.08)">Yearly</button>
+                <button id="schedBtnMonth" onclick="showSchedule('month')" style="padding:5px 12px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--text3)">Monthly</button>
+              </div>
+              <button onclick="downloadEMI()" style="display:flex;align-items:center;gap:5px;background:var(--green);color:#fff;border:none;border-radius:8px;padding:0 12px;height:32px;font-size:12px;font-weight:600;cursor:pointer">⬇ Export</button>
+            </div>
+          </div>
+          <div style="overflow-x:auto;max-height:400px;overflow-y:auto">
+            <table class="lead-table" style="width:100%;min-width:600px">
+              <thead style="position:sticky;top:0;background:#fff;z-index:2"><tr>
+                <th style="padding:12px 20px 8px" id="schedColLabel">Year</th>
+                <th>Opening Balance</th><th>EMI Paid</th><th>Principal Paid</th><th>Interest Paid</th><th>Closing Balance</th>
+              </tr></thead>
+              <tbody id="scheduleBody"></tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE: REPORTS ═══ -->
+    <div id="pg-reports" class="dash-subpage" style="display:none">
+      <div class="content">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+          <div><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:var(--text)">Reports & Analytics</h2><p style="font-size:13px;color:var(--text3);margin-top:2px">Performance overview</p></div>
+          <div style="display:flex;gap:8px">
+            <select id="reportPeriod" style="height:36px;border:1.5px solid var(--border);border-radius:8px;padding:0 10px;font-size:12px;outline:none;background:#fff;font-family:'DM Sans',sans-serif"><option>April 2026</option><option>March 2026</option><option>February 2026</option><option>Last 3 months</option></select>
+            <button onclick="downloadReport()" style="display:flex;align-items:center;gap:6px;background:var(--brand);color:#fff;border:none;border-radius:8px;padding:0 14px;height:36px;font-size:12px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">⬇ Export Report</button>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px">
+          <div class="kpi-card blue"><div class="kpi-lbl">Lead Conversion</div><div id="rptConv" class="kpi-val">0%</div><div class="kpi-change up">Leads converted to disbursals</div></div>
+          <div class="kpi-card green"><div class="kpi-lbl">Total Commission</div><div id="rptComm" class="kpi-val">₹0</div><div class="kpi-change up">From all credited leads</div></div>
+          <div class="kpi-card orange"><div class="kpi-lbl">Total Leads Added</div><div id="rptLeads" class="kpi-val">0</div><div class="kpi-change up">Across all banks</div></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+          <div class="dash-card"><div class="card-head"><div class="card-title">Leads by Bank</div></div><div id="rptBankChart" class="card-body"></div></div>
+          <div class="dash-card"><div class="card-head"><div class="card-title">Leads by Loan Type</div></div><div id="rptTypeChart" class="card-body"></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE: DOCUMENTS ═══ -->
+    <div id="pg-documents" class="dash-subpage" style="display:none">
+      <!-- UPLOAD MODAL -->
+      <div id="docModal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:999;align-items:center;justify-content:center">
+        <div style="background:#fff;border-radius:16px;width:500px;max-width:95vw;box-shadow:0 20px 60px rgba(0,0,0,.25)">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:18px 22px;border-bottom:1px solid var(--border)">
+            <div style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:15px">📎 Upload Document</div>
+            <button onclick="closeDocModal()" style="background:none;border:none;cursor:pointer;font-size:20px;color:var(--text3)">✕</button>
+          </div>
+          <div style="padding:22px;display:flex;flex-direction:column;gap:13px">
+            <div class="field" style="margin:0"><label>Customer Name <span style="color:var(--red)">*</span></label><input type="text" id="doc_cust" placeholder="Name of customer"></div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>Document Type <span style="color:var(--red)">*</span></label><select id="doc_type"><option value="">Select</option><option>Aadhaar Card</option><option>PAN Card</option><option>Salary Slip</option><option>Bank Statement</option><option>ITR</option><option>Form 16</option><option>Property Documents</option><option>Business Proof</option><option>Photo</option><option>Other</option></select></div>
+              <div class="field" style="margin:0"><label>Loan Type</label><select id="doc_ltype"><option value="">Select</option><option>Home Loan</option><option>Personal Loan</option><option>Business Loan</option><option>LAP</option><option>Car Loan</option></select></div>
+            </div>
+            <div class="field" style="margin:0"><label>Choose File <span style="color:var(--red)">*</span></label>
+              <div id="dropzone" onclick="document.getElementById('docFile').click()" ondragover="event.preventDefault();this.style.background='#eff4ff'" ondragleave="this.style.background=''" ondrop="handleDocDrop(event)" style="border:2px dashed var(--border2);border-radius:10px;padding:24px;text-align:center;cursor:pointer;transition:background .2s">
+                <div style="font-size:28px;margin-bottom:8px">📁</div>
+                <div style="font-size:13px;font-weight:600;color:var(--text2)">Click to browse or drag & drop</div>
+                <div style="font-size:11px;color:var(--text3);margin-top:4px">PDF, JPG, PNG, XLSX — Max 10MB</div>
+                <input type="file" id="docFile" accept=".pdf,.jpg,.jpeg,.png,.xlsx,.xls" style="display:none" onchange="handleDocSelect(this)">
+              </div>
+              <div id="docFileName" style="margin-top:8px;font-size:12px;color:var(--green);font-weight:600"></div>
+            </div>
+            <div class="field" style="margin:0"><label>Notes</label><input type="text" id="doc_notes" placeholder="Optional notes about this document"></div>
+            <div style="display:flex;gap:10px;margin-top:4px">
+              <button onclick="saveDocument()" style="flex:1;height:44px;background:var(--brand);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">Upload</button>
+              <button onclick="closeDocModal()" style="flex:1;height:44px;background:#fff;color:var(--text);border:1.5px solid var(--border2);border-radius:10px;font-size:14px;font-weight:600;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+          <div><h2 style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:20px;color:var(--text)">Documents</h2><p id="docSubtitle" style="font-size:13px;color:var(--text3);margin-top:2px">0 documents uploaded</p></div>
+          <button onclick="openDocModal()" class="tb-add-btn" style="width:auto;padding:0 18px">📎 Upload Document</button>
+        </div>
+        <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px">
+          <div class="dash-card" style="padding:16px 20px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);margin-bottom:6px">Total Documents</div><div id="docCountTotal" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--text)">0</div></div>
+          <div class="dash-card" style="padding:16px 20px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);margin-bottom:6px">Pending Review</div><div id="docCountPending" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--yellow)">0</div></div>
+          <div class="dash-card" style="padding:16px 20px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);margin-bottom:6px">Verified</div><div id="docCountVerified" style="font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:26px;color:var(--green)">0</div></div>
+        </div>
+        <div class="dash-card">
+          <div class="card-head"><div class="card-title">All Documents</div><input type="text" id="docSearch" oninput="renderDocs()" placeholder="Search..." style="height:32px;border:1px solid var(--border);border-radius:6px;padding:0 10px;font-size:12px;outline:none;width:160px"></div>
+          <div style="overflow-x:auto">
+            <table class="lead-table" style="width:100%;min-width:600px">
+              <thead><tr><th style="padding:12px 20px 8px">Document</th><th>Customer</th><th>Type</th><th>Loan</th><th>Uploaded</th><th>Status</th><th>Action</th></tr></thead>
+              <tbody id="docTableBody"></tbody>
+            </table>
+            <div id="docEmpty" style="text-align:center;padding:48px 20px;color:var(--text3)"><div style="font-size:40px;margin-bottom:12px">📂</div><div style="font-weight:600;font-size:15px;color:var(--text2)">No documents yet</div><div style="font-size:13px">Click "Upload Document" to add files</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ PAGE: BANK PARTNERS ═══ -->
+
+
+    <!-- BANK PARTNERS PAGE -->
+    <div id="pg-banks" class="dash-subpage">
+
+      <!-- Add Bank Modal -->
+      <div class="modal-bg" id="bankModal">
+        <div class="modal-box" style="width:620px">
+          <div class="modal-head">
+            <span class="modal-title">🏦 Add Bank Partner</span>
+            <button class="modal-close" onclick="closeBankModal()">✕</button>
+          </div>
+          <div class="modal-body">
+            <!-- Loan Type -->
+            <div>
+              <label style="display:block;font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:8px">Loan Category <span style="color:var(--red)">*</span></label>
+              <div class="loan-type-btns">
+                <button class="loan-type-btn" id="bmt-bl" onclick="selectLoanType('bl')"><span class="lt-icon">💼</span>Business Loans</button>
+                <button class="loan-type-btn" id="bmt-pl" onclick="selectLoanType('pl')"><span class="lt-icon">👤</span>Personal Loans</button>
+                <button class="loan-type-btn" id="bmt-hl" onclick="selectLoanType('hl')"><span class="lt-icon">🏡</span>Housing Loans</button>
+                <button class="loan-type-btn" id="bmt-lap" onclick="selectLoanType('lap')"><span class="lt-icon">🏢</span>Loan Against Property</button>
+              </div>
+            </div>
+            <!-- Paste Policy -->
+            <div>
+              <label style="display:block;font-size:12.5px;font-weight:700;color:var(--text);margin-bottom:6px">📋 Paste Bank Policy <span style="font-weight:400;color:var(--text3)">(optional — AI auto-fills fields)</span></label>
+              <textarea class="policy-paste-area" id="bk_policy" placeholder="Paste bank policy, circular or WhatsApp message here — Bank Name, ROI, CIBIL, TAT, Location, products will be auto-captured automatically..." oninput="autoCaptureBank()"></textarea>
+              <div class="parse-status" id="parseStatus">✅ AI auto-filled fields from pasted policy!</div>
+            </div>
+            <!-- Fields -->
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>Bank / NBFC Name <span style="color:var(--red)">*</span></label><input type="text" id="bk_name" placeholder="Auto-captured or enter manually"></div>
+              <div class="field" style="margin:0"><label>Short Code</label><input type="text" id="bk_code" placeholder="e.g. HDFC, SBI" maxlength="6"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>Banker / RM Name <span style="color:var(--red)">*</span></label><input type="text" id="bk_rm" placeholder="Relationship Manager name"></div>
+              <div class="field" style="margin:0"><label>RM Mobile</label><input type="tel" id="bk_rmphone" placeholder="10-digit mobile" maxlength="10"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>RM Email</label><input type="email" id="bk_rmemail" placeholder="rm@bank.com"></div>
+              <div class="field" style="margin:0"><label>Branch / Location <span style="color:var(--red)">*</span></label><input type="text" id="bk_location" placeholder="City / branch"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>ROI</label><input type="text" id="bk_roi" placeholder="e.g. 8.5%–11%"></div>
+              <div class="field" style="margin:0"><label>Commission / Payout</label><input type="text" id="bk_rate" placeholder="e.g. 1%–1.5%"></div>
+              <div class="field" style="margin:0"><label>Min CIBIL</label><input type="text" id="bk_cibil" placeholder="e.g. 700+"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>TAT</label><input type="text" id="bk_tat" placeholder="e.g. 3–5 days"></div>
+              <div class="field" style="margin:0"><label>Status</label><select id="bk_status"><option>Active</option><option>Pending Tie-up</option><option>Inactive</option></select></div>
+            </div>
+            <div class="field"><label>Loan Products / Programs Offered</label><input type="text" id="bk_products" placeholder="e.g. Home Loan, LAP, Without ITR, Single Document, BT+Top-Up"></div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" onclick="saveBank()">💾 Save Bank Partner</button>
+              <button class="btn btn-outline" onclick="closeBankModal()">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add Banker Contact Modal -->
+      <div class="modal-bg" id="bankerContactModal">
+        <div class="modal-box" style="width:520px">
+          <div class="modal-head">
+            <span class="modal-title">📞 Add Banker Contact</span>
+            <button class="modal-close" onclick="closeBankerContactModal()">✕</button>
+          </div>
+          <div class="modal-body">
+            <div style="background:var(--brand-light);border:1px solid rgba(26,86,219,.2);border-radius:10px;padding:11px 14px;font-size:12.5px;color:var(--brand-dark);margin-bottom:4px">
+              💡 Add the banker's contact details here. You can Call, WhatsApp, Email, or chat with them directly from this section.
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>Bank / NBFC Name <span style="color:var(--red)">*</span></label><input type="text" id="bc_bank" placeholder="e.g. HDFC Bank, Bajaj Finance"></div>
+              <div class="field" style="margin:0"><label>Location / Branch <span style="color:var(--red)">*</span></label><input type="text" id="bc_location" placeholder="City or branch name"></div>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div class="field" style="margin:0"><label>Banker Name <span style="color:var(--red)">*</span></label><input type="text" id="bc_name" placeholder="Banker / RM full name"></div>
+              <div class="field" style="margin:0"><label>Contact Number <span style="color:var(--red)">*</span></label><input type="tel" id="bc_phone" placeholder="10-digit mobile" maxlength="10" inputmode="numeric"></div>
+            </div>
+            <div class="field"><label>Mail ID</label><input type="email" id="bc_email" placeholder="banker@bank.com"></div>
+            <div class="modal-footer">
+              <button class="btn btn-primary" onclick="saveBankerContact()">Save Contact</button>
+              <button class="btn btn-outline" onclick="closeBankerContactModal()">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <!-- Page Header -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:18px">
+          <div>
+            <h2 style="font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:800;font-size:20px;color:var(--text)">Bank Partners</h2>
+            <p id="bankSubtitle" style="font-size:13px;color:var(--text3);margin-top:2px">0 partners added</p>
+          </div>
+          <button onclick="openBankModal()" class="tb-add-btn" style="width:auto;padding:0 18px">🏦 Add Bank Partner</button>
+        </div>
+
+        <!-- Loan Type Tab Filters -->
+        <div class="bank-tab-bar">
+          <button class="bank-tab active" id="bptab-all" onclick="filterBankTab('all')">🏦 All Banks</button>
+          <button class="bank-tab" id="bptab-bl" onclick="filterBankTab('bl')">💼 Business Loans</button>
+          <button class="bank-tab" id="bptab-pl" onclick="filterBankTab('pl')">👤 Personal Loans</button>
+          <button class="bank-tab" id="bptab-hl" onclick="filterBankTab('hl')">🏡 Housing Loans</button>
+          <button class="bank-tab" id="bptab-lap" onclick="filterBankTab('lap')">🏢 Loan Against Property</button>
+        </div>
+
+        <!-- AI Search -->
+        <div class="ai-search-wrap">
+          <span class="ai-search-icon">🔍</span>
+          <input class="ai-search-input" id="bankAISearch" type="text"
+            placeholder="🤖 AI Search — bank name, CIBIL, ROI, No ITR, 5ft road, plot, LRD, NRI, gram panchayat, cash salary, payout, hospital…"
+            oninput="bankAISearchFn(this.value)" autocomplete="off"
+            onblur="setTimeout(function(){var r=document.getElementById(\'bankAIResults\');if(r)r.classList.remove(\'show\')},250)">
+          <div class="ai-results" id="bankAIResults"></div>
+        </div>
+        <!-- Quick Search Chips -->
+        <div class="search-chips">
+          <span class="search-chip" onclick="setBankSearch('cibil')">💳 CIBIL</span>
+          <span class="search-chip" onclick="setBankSearch('without itr')">🚫 No ITR</span>
+          <span class="search-chip" onclick="setBankSearch('5ft road')">🛣️ 5ft Road</span>
+          <span class="search-chip" onclick="setBankSearch('plot')">🏗️ Plot Loan</span>
+          <span class="search-chip" onclick="setBankSearch('hospital')">🏥 Hospital</span>
+          <span class="search-chip" onclick="setBankSearch('single document')">📄 Single Doc</span>
+          <span class="search-chip" onclick="setBankSearch('lrd')">🔑 LRD</span>
+          <span class="search-chip" onclick="setBankSearch('nri')">🌍 NRI</span>
+          <span class="search-chip" onclick="setBankSearch('cash salary')">💵 Cash Salary</span>
+          <span class="search-chip" onclick="setBankSearch('gram panchayat')">🏡 GP</span>
+          <span class="search-chip" onclick="setBankSearch('vendor bt')">🔄 Vendor BT</span>
+          <span class="search-chip" onclick="setBankSearch('payout')">💰 Payout</span>
+          <span class="search-chip" onclick="setBankSearch('low ltv')">📉 Low LTV</span>
+          <span class="search-chip" onclick="setBankSearch('auction')">🏆 Auction</span>
+          <span class="search-chip clear" onclick="clearBankSearch()">✕ Clear</span>
+        </div>
+
+        <!-- Bank Cards Grid -->
+        <div id="bankGrid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px"></div>
+
+        <!-- ══ BANKER COMMUNICATION SECTION ══ -->
+        <div class="banker-comm-section">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:20px">
+            <div>
+              <h3 style="font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:800;font-size:18px;color:var(--text)">📞 Banker Communication</h3>
+              <p style="font-size:13px;color:var(--text3);margin-top:3px">Manage banker contacts · Call · WhatsApp · Email · Chat directly</p>
+            </div>
+            <button onclick="document.getElementById(\'bankerContactModal\').style.display=\'flex\'" class="tb-add-btn" style="width:auto;padding:0 16px">➕ Add Banker Contact</button>
+          </div>
+
+          <!-- Banker Contact Cards -->
+          <div class="comm-contacts-grid" id="bankerContactsGrid">
+            <div style="grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--text3)">
+              <div style="font-size:36px;margin-bottom:10px">📞</div>
+              <p style="font-weight:700;font-size:14px;color:var(--text2);margin-bottom:4px">No banker contacts yet</p>
+              <p style="font-size:13px">Add banker contacts to call, WhatsApp, email or chat directly</p>
+            </div>
+          </div>
+
+          <!-- Chat Box -->
+          <div class="chat-wrap">
+            <div class="chat-head">
+              <div class="chat-head-left">
+                <div class="chat-head-title">💬 Message Center</div>
+                <div class="chat-head-sub" id="chatHeadSub">Select a banker contact to start chatting</div>
+              </div>
+              <div class="chat-head-actions">
+                <button class="chat-head-btn" onclick="chatCallBanker()">📞 Call</button>
+                <button class="chat-head-btn" onclick="chatWhatsAppBanker()">💬 WA</button>
+                <button class="chat-head-btn" onclick="chatMailBanker()">✉️ Email</button>
+              </div>
+            </div>
+            <!-- Contact Selector Pills -->
+            <div class="chat-contact-pills" id="chatPills">
+              <span style="font-size:12px;color:var(--text3);padding:5px 0;white-space:nowrap">No contacts added yet</span>
+            </div>
+            <!-- Messages -->
+            <div class="chat-body" id="chatBody">
+              <div class="chat-empty">💬 Select a banker contact from above to start chatting</div>
+            </div>
+            <!-- Input Row -->
+            <div class="chat-input-row">
+              <textarea class="chat-input" id="chatInput" placeholder="Type your message to the banker…" rows="1"
+                onkeydown="if(event.key===\'Enter\'&&!event.shiftKey){event.preventDefault();sendChatMsg()}"></textarea>
+              <button class="chat-send-btn" onclick="sendChatMsg()" title="Send">
+                <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2L2 8l4 2 2 4 6-12z"/></svg>
+              </button>
+            </div>
+          </div>
+
+        </div><!-- /banker-comm-section -->
+      </div><!-- /content -->
+    </div><!-- /pg-banks -->
+
+
+  </div><!-- /main -->
+</div><!-- /dashPage -->
+
+
+<!-- ══ ADMIN PAGE ══ -->
+<div id="adminPage">
+  <div class="admin-layout">
+    <div class="admin-sidebar">
+      <a href="#" class="sb-logo">
+        <div class="sb-logo-box" style="background:#7c3aed"><svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="17" height="17"><path d="M8 1l7 4v6l-7 4-7-4V5z"/></svg></div>
+        <span class="sb-logo-name" style="color:var(--text)">Admin <em style="color:#7c3aed">Panel</em></span>
+      </a>
+      <div class="sb-section">
+        <div class="sb-section-lbl">Management</div>
+        <a href="#" class="sb-item active" id="adnav-dsa" onclick="adminNav('dsa');return false">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg>DSA Management
+        </a>
+        <a href="#" class="sb-item" id="adnav-pending" onclick="adminNav('pending');return false">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 4v4l3 2"/></svg>
+          Pending Approvals
+          <span id="pendingBadge" style="margin-left:auto;background:var(--red);color:#fff;font-size:10px;font-weight:700;border-radius:100px;padding:1px 7px;display:none">0</span>
+        </a>
+      </div>
+      <div class="sb-footer">
+        <a href="#" class="sb-item" style="color:var(--red)" onclick="logOutAdmin();return false">
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 2H2v12h4M10 5l4 3-4 3M6 8h8"/></svg>Exit Admin
+        </a>
+      </div>
+    </div>
+
+    <div class="admin-topbar">
+      <div><div class="topbar-title">Admin Panel — DSA Naidu CRM</div><div class="topbar-sub">Manage DSA registrations and approvals</div></div>
+    </div>
+
+    <div class="admin-main">
+      <div class="content">
+        <!-- KPIs -->
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:22px">
+          <div class="kpi-card"><div class="kpi-icon blue"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="6" r="3"/><path d="M2 14c0-3.3 2.7-6 6-6s6 2.7 6 6"/></svg></div><div class="kpi-lbl">Total DSAs</div><div class="kpi-val" id="adKpiTotal">0</div></div>
+          <div class="kpi-card"><div class="kpi-icon green"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><polyline points="2,9 6,13 14,3"/></svg></div><div class="kpi-lbl">Approved</div><div class="kpi-val" id="adKpiApproved">0</div></div>
+          <div class="kpi-card"><div class="kpi-icon orange"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="8" cy="8" r="6.5"/><path d="M8 4v4l3 2"/></svg></div><div class="kpi-lbl">Pending</div><div class="kpi-val" id="adKpiPending">0</div></div>
+          <div class="kpi-card"><div class="kpi-icon red"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M2 2l12 12M14 2L2 14"/></svg></div><div class="kpi-lbl">Rejected</div><div class="kpi-val" id="adKpiRejected">0</div></div>
+        </div>
+
+        <!-- DSA Table -->
+        <div id="ad-dsa">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+            <div style="font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:800;font-size:17px">All DSA / Connectors</div>
+          </div>
+          <div style="display:flex;gap:10px;margin-bottom:14px">
+            <input type="text" id="adminSearch" style="flex:1;border:1.5px solid var(--border);border-radius:9px;padding:0 14px;height:38px;font-size:13px;font-family:\'DM Sans\',sans-serif;color:var(--text);outline:none;background:#fff" placeholder="🔍 Search by name or mobile…" oninput="renderAdminTable()">
+            <select id="adminStatusFilter" style="border:1.5px solid var(--border);border-radius:9px;padding:0 14px;height:38px;font-size:13px;font-family:\'DM Sans\',sans-serif;color:var(--text);outline:none;background:#fff" onchange="renderAdminTable()">
+              <option value="">All Status</option><option value="Pending">Pending</option><option value="Approved">Approved</option><option value="Rejected">Rejected</option>
+            </select>
+          </div>
+          <div style="background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden">
+            <table style="width:100%;border-collapse:collapse">
+              <thead><tr style="background:#f9fafb">
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Name</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Mobile</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Type</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">City</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Status</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Registered</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Actions</th>
+              </tr></thead>
+              <tbody id="adminTableBody"></tbody>
+            </table>
+            <div id="adminEmpty" style="text-align:center;padding:50px 20px;display:none">
+              <p style="font-weight:700;color:var(--text2);margin-bottom:4px">No registrations yet</p>
+              <span style="font-size:13px;color:var(--text3)">DSA registrations will appear here when users sign up</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pending Approvals -->
+        <div id="ad-pending" style="display:none">
+          <div style="font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:800;font-size:17px;margin-bottom:14px">Pending Approvals</div>
+          <div style="background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden">
+            <table style="width:100%;border-collapse:collapse">
+              <thead><tr style="background:#f9fafb">
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Name</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Mobile</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Type</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">City</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Registered</th>
+                <th style="padding:12px 18px;text-align:left;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.4px;color:var(--text3);border-bottom:1px solid var(--border)">Actions</th>
+              </tr></thead>
+              <tbody id="pendingTableBody"></tbody>
+            </table>
+            <div id="pendingEmpty" style="text-align:center;padding:50px 20px;display:none">
+              <p style="font-weight:700;color:var(--text2);margin-bottom:4px">No pending approvals</p>
+              <span style="font-size:13px;color:var(--text3)">All registrations have been processed</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+
+var timerInterval=null;
+
+/* ─── Shared data stores ─── */
+var LEADS=[], FOLLOWUPS=[], DOCUMENTS=[], BANKS=[], APPLICATIONS=[];
+
+/* ══════════════════════════════════
+   LOGIN FLOW
+══════════════════════════════════ */
+var timerInterval=null;
+function checkPhone(){
+  var v=document.getElementById('phoneInput').value;
+  var btn=document.getElementById('sendOtpBtn');
+  var ok=v.length===10&&/^[6-9]/.test(v);
+  btn.disabled=!ok;btn.style.opacity=ok?'1':'0.5';btn.style.cursor=ok?'pointer':'not-allowed';
+}
+function goStep2(){
+  var phone=document.getElementById('phoneInput').value;
+  if(phone.length!==10)return;
+  document.getElementById('phoneDisplay').textContent='+91 '+phone.substr(0,5)+'XXXXX';
+  setStep(2);startTimer();
+  setTimeout(function(){document.getElementById('o1').focus();},200);
+}
+function goStep1(){clearInterval(timerInterval);setStep(1);}
+function goStep3(){setStep(3);}
+function goStep4(){setStep(4);}
+function setStep(n){
+  [1,2,3,4].forEach(function(i){var p=document.getElementById('step'+i);if(p)p.className='panel'+(i===n?' active':'');});
+  ['sc1','sc2','sc3','sc4'].forEach(function(id,i){
+    var c=document.getElementById(id);if(!c)return;
+    c.className='step-circle';
+    if(i+1<n){c.classList.add('done');c.innerHTML='<svg viewBox="0 0 12 12" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" width="12" height="12"><polyline points="2,6 5,9 10,3"/></svg>';}
+    else if(i+1===n)c.classList.add('active');
+    else{c.classList.add('pending');if(i!==3)c.textContent=i+1;}
+  });
+  ['sl1','sl2','sl3'].forEach(function(id,i){var l=document.getElementById(id);if(l)l.className='step-line'+(i+1<n?' done':'');});
+}
+function otpInput(el,idx){
+  el.value=el.value.replace(/\D/g,'');
+  if(el.value){el.classList.add('filled');var nx=document.getElementById('o'+(idx+1));if(nx)nx.focus();}
+  else el.classList.remove('filled');
+  checkOtp();
+}
+function checkOtp(){
+  var full='';for(var i=1;i<=6;i++){var v=document.getElementById('o'+i);full+=v?v.value:'';}
+  var btn=document.getElementById('verifyBtn');var ok=full.length===6;
+  btn.disabled=!ok;btn.style.opacity=ok?'1':'0.5';btn.style.cursor=ok?'pointer':'not-allowed';
+}
+document.addEventListener('keydown',function(e){
+  if(e.key==='Backspace'){var t=e.target;if(t.classList&&t.classList.contains('otp-box')&&!t.value){var id=parseInt(t.id.replace('o',''));var prev=document.getElementById('o'+(id-1));if(prev){prev.focus();prev.value='';prev.classList.remove('filled');}}}
+});
+function startTimer(){
+  clearInterval(timerInterval);var sec=30;
+  var cd=document.getElementById('countdown'),timer=document.getElementById('resendTimer'),btn=document.getElementById('resendBtn');
+  if(timer)timer.style.display='';if(btn)btn.style.display='none';if(cd)cd.textContent=sec;
+  timerInterval=setInterval(function(){sec--;if(cd)cd.textContent=sec;if(sec<=0){clearInterval(timerInterval);if(timer)timer.style.display='none';if(btn){btn.style.display='';btn.disabled=false;}}},1000);
+}
+function openDashboard(){
+  var name=(document.getElementById('fullName')&&document.getElementById('fullName').value)||'';name=name.trim();
+  if(name){
+    var parts=name.split(' '),initials=(parts[0]?parts[0][0]:'D')+(parts[1]?parts[1][0]:'N'),firstName=parts[0]||'there';
+    var e=document.getElementById('sbAv');if(e)e.textContent=initials.toUpperCase();
+    e=document.getElementById('sbName');if(e)e.textContent=name;
+    var hr=new Date().getHours(),g=hr<12?'Good morning':hr<17?'Good afternoon':'Good evening';
+    e=document.getElementById('greetName');if(e)e.textContent=g+', '+firstName+'! 👋';
+  } else {
+    var hr=new Date().getHours(),g=hr<12?'Good morning':hr<17?'Good afternoon':'Good evening';
+    var e=document.getElementById('greetName');if(e)e.textContent=g+', there! 👋';
+  }
+  document.getElementById('loginPage').style.display='none';
+  document.getElementById('dashPage').style.display='block';
+  document.body.style.background='var(--bg)';window.scrollTo(0,0);
+  navTo('dashboard');
+}
+function logOut(){
+  document.getElementById('dashPage').style.display='none';
+  document.getElementById('loginPage').style.display='flex';
+  setStep(1);var pi=document.getElementById('phoneInput');if(pi)pi.value='';
+  for(var i=1;i<=6;i++){var o=document.getElementById('o'+i);if(o){o.value='';o.classList.remove('filled');}}
+}
+
+/* ══════════════════════════════════
+   NAVIGATION
+══════════════════════════════════ */
+var PAGE_TITLES={dashboard:'Dashboard Overview',leads:'Leads Queue',applications:'Application Tracker',commissions:'Commission Tracker',followups:'Follow-ups',emicalc:'EMI Calculator',reports:'Reports & Analytics',documents:'Documents',banks:'Bank Partners'};
+function navTo(page){
+  var pg=document.getElementById('pg-dashboard');if(pg)pg.style.display=(page==='dashboard'?'block':'none');
+  document.querySelectorAll('.dash-subpage').forEach(function(el){el.style.display='none';});
+  if(page!=='dashboard'){var t=document.getElementById('pg-'+page);if(t)t.style.display='block';}
+  document.querySelectorAll('.sb-item').forEach(function(el){el.classList.remove('active');});
+  var ni=document.getElementById('nav-'+page);if(ni)ni.classList.add('active');
+  var ti=document.getElementById('topbarTitle');if(ti)ti.textContent=PAGE_TITLES[page]||'Dashboard';
+  if(page==='emicalc')setTimeout(calcEMI,100);
+  if(page==='applications')renderApps();
+  if(page==='commissions')renderComm();
+  if(page==='reports')renderReports();
+  if(page==='leads')renderLeads();
+  if(page==='followups')renderFollowups();
+  if(page==='documents')renderDocs();
+  if(page==='banks')renderBanks();
+}
+(function(){
+  var days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var now=new Date();var el=document.getElementById('topbarDate');
+  if(el)el.textContent=days[now.getDay()]+', '+now.getDate()+' '+months[now.getMonth()]+' '+now.getFullYear();
+})();
+
+/* ══════════════════════════════════
+   HELPERS
+══════════════════════════════════ */
+function fmtINR(n){if(isNaN(n)||n<=0)return '₹0';return '₹'+Math.round(n).toLocaleString('en-IN');}
+function fmtDate(d){var months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return d.getDate()+' '+months[d.getMonth()]+' '+d.getFullYear();}
+function todayStr(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+function statusBadge(s){var m={New:'new','Docs Pending':'docs',Verification:'verify',Approved:'approved',Disbursed:'disbursed',Rejected:'rejected','In Process':'docs','Credited':'approved','Pending':'docs'};return '<span class="badge '+(m[s]||'new')+'">'+s+'</span>';}
+function bankDot(name,code){var colors={'SBI':'#004C97','HDFC Bank':'#1a56db','HDFC':'#1a56db','ICICI Bank':'#f97316','ICICI':'#f97316','Axis Bank':'#6d28d9','Axis':'#6d28d9','Kotak Bank':'#dc2626','Kotak':'#dc2626','PNB':'#059669','Bank of Baroda':'#b45309'};var c=colors[name]||'#374151';return '<div style="width:28px;height:28px;border-radius:6px;background:'+c+';display:inline-flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;font-family:\'Plus Jakarta Sans\',sans-serif">'+((code||name).substr(0,4))+'</div>';}
+function showToast(msg,type){
+  var t=document.createElement('div');
+  t.textContent=msg;
+  t.style.cssText='position:fixed;bottom:28px;right:24px;z-index:9999;background:'+(type==='error'?'#ef4444':'#059669')+';color:#fff;padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;box-shadow:0 4px 18px rgba(0,0,0,.18);font-family:\'Plus Jakarta Sans\',sans-serif;transition:opacity .4s';
+  document.body.appendChild(t);setTimeout(function(){t.style.opacity='0';setTimeout(function(){t.remove();},400);},2500);
+}
+
+/* ══════════════════════════════════
+   1. LEADS
+══════════════════════════════════ */
+function openLeadModal(){var m=document.getElementById('leadModal');m.style.display='flex';['lf_name','lf_phone','lf_email','lf_city','lf_amount','lf_income','lf_notes'].forEach(function(id){var e=document.getElementById(id);if(e)e.value='';});document.getElementById('lf_ltype').value='';document.getElementById('lf_bank').value='';}
+function closeLeadModal(){document.getElementById('leadModal').style.display='none';}
+function saveNewLead(){
+  var name=document.getElementById('lf_name').value.trim(),phone=document.getElementById('lf_phone').value.trim(),ltype=document.getElementById('lf_ltype').value,amount=document.getElementById('lf_amount').value;
+  if(!name){showToast('Please enter customer name','error');return;}
+  if(!phone||phone.length<10){showToast('Please enter valid 10-digit mobile','error');return;}
+  if(!ltype){showToast('Please select loan type','error');return;}
+  if(!amount){showToast('Please enter loan amount','error');return;}
+  var lead={id:Date.now(),name:name,phone:phone,email:document.getElementById('lf_email').value.trim(),city:document.getElementById('lf_city').value.trim(),ltype:ltype,amount:parseInt(amount)||0,bank:document.getElementById('lf_bank').value||'Any Bank',income:document.getElementById('lf_income').value||'',notes:document.getElementById('lf_notes').value.trim(),status:'New',date:new Date()};
+  LEADS.unshift(lead);
+  // Also add to applications with In Process
+  APPLICATIONS.unshift({id:lead.id,name:name,ltype:ltype,amount:lead.amount,bank:lead.bank,appNo:'APP/'+lead.id,submitted:new Date(),status:'In Process',expected:'7–10 days'});
+  closeLeadModal();renderLeads();showToast('Lead added successfully ✅');
+}
+function renderLeads(){
+  var q=(document.getElementById('leadSearch')||{}).value||'';
+  var sf=(document.getElementById('leadStatusFilter')||{}).value||'';
+  var tf=(document.getElementById('leadTypeFilter')||{}).value||'';
+  var bf=(document.getElementById('leadBankFilter')||{}).value||'';
+  var filtered=LEADS.filter(function(l){
+    if(q&&!(l.name.toLowerCase().includes(q.toLowerCase())||l.phone.includes(q)))return false;
+    if(sf&&l.status!==sf)return false;if(tf&&l.ltype!==tf)return false;if(bf&&l.bank!==bf)return false;return true;
+  });
+  var cnt=document.getElementById('leadsCount');if(cnt)cnt.textContent=LEADS.length+' total leads · '+filtered.length+' shown';
+  var tbody=document.getElementById('leadsTableBody');
+  var empty=document.getElementById('leadsEmpty');
+  if(!filtered.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';return;}
+  if(empty)empty.style.display='none';
+  if(!tbody)return;
+  tbody.innerHTML=filtered.map(function(l){
+    return '<tr><td style="padding:12px 20px"><div class="lead-name">'+l.name+'</div><div class="lead-phone">'+l.city+'</div></td><td style="font-size:13px;color:var(--text2)">'+l.phone+'</td><td style="font-size:13px;color:var(--text2)">'+l.ltype+'</td><td style="font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:700;color:var(--text)">'+fmtINR(l.amount)+'</td><td><div style="display:flex;align-items:center;gap:6px">'+bankDot(l.bank,l.bank.substring(0,4))+'<span style="font-size:12px;color:var(--text2)">'+l.bank+'</span></div></td><td>'+statusBadge(l.status)+'</td><td style="font-size:12px;color:var(--text3)">'+fmtDate(l.date)+'</td><td><button onclick="viewLead('+l.id+')" style="font-size:12px;font-weight:600;color:var(--brand);background:none;border:1px solid var(--brand);border-radius:6px;padding:4px 10px;cursor:pointer">View</button></td></tr>';
+  }).join('');
+}
+function viewLead(id){
+  var l=LEADS.find(function(x){return x.id===id;});if(!l)return;
+  var m=document.getElementById('viewLeadModal');m.style.display='flex';
+  document.getElementById('viewLeadBody').innerHTML='<div style="display:flex;flex-direction:column;gap:12px"><div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Customer Name</div><div style="font-weight:600;color:var(--text)">'+l.name+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Mobile</div><div style="font-weight:600;color:var(--text)">'+l.phone+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Loan Type</div><div style="font-weight:600;color:var(--text)">'+l.ltype+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Amount</div><div style="font-weight:700;color:var(--brand)">'+fmtINR(l.amount)+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Bank</div><div style="font-weight:600;color:var(--text)">'+l.bank+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Status</div>'+statusBadge(l.status)+'</div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Email</div><div style="font-weight:600;color:var(--text)">'+(l.email||'—')+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">City</div><div style="font-weight:600;color:var(--text)">'+(l.city||'—')+'</div></div></div>'+(l.notes?'<div style="background:#fffbeb;border:1px solid #fde68a;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:4px">Notes</div><div style="font-size:13px;color:var(--text2)">'+l.notes+'</div></div>':'')+'<div style="display:flex;gap:8px;margin-top:4px"><button onclick="updateLeadStatus('+l.id+',\'Approved\')" style="flex:1;height:38px;background:var(--green);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer">Mark Approved</button><button onclick="updateLeadStatus('+l.id+',\'Rejected\')" style="flex:1;height:38px;background:var(--red);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer">Mark Rejected</button><button onclick="updateLeadStatus('+l.id+',\'Disbursed\')" style="flex:1;height:38px;background:var(--brand);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer">Disbursed</button></div></div>';
+}
+function closeViewLead(){document.getElementById('viewLeadModal').style.display='none';}
+function updateLeadStatus(id,status){
+  var l=LEADS.find(function(x){return x.id===id;});if(l){l.status=status;renderLeads();}
+  var a=APPLICATIONS.find(function(x){return x.id===id;});if(a){a.status=status;}
+  if(status==='Disbursed'&&l){
+    var existing=APPLICATIONS.find(function(x){return x.id===id;});
+    if(existing){existing.status='Approved';}
+    var comm=l.amount*0.01;
+    APPLICATIONS=APPLICATIONS.filter(function(x){return x.id!==id;});
+    APPLICATIONS.unshift({id:id,name:l.name,ltype:l.ltype,amount:l.amount,bank:l.bank,appNo:'APP/'+id,submitted:new Date(),status:'Approved',expected:'Disbursed'});
+  }
+  closeViewLead();showToast('Status updated to '+status);
+}
+
+/* ══════════════════════════════════
+   2. APPLICATIONS
+══════════════════════════════════ */
+var appFilter='all';
+function filterApps(f){
+  appFilter=f;
+  document.querySelectorAll('[id^="appq-"]').forEach(function(el){
+    el.style.border='2px solid var(--border)';
+  });
+  var active=document.getElementById('appq-'+f.toLowerCase().replace(' ','-'));
+  if(active)active.style.border='2px solid var(--brand)';
+  renderApps();
+}
+function renderApps(){
+  var counts={all:APPLICATIONS.length,approved:0,inprocess:0,rejected:0};
+  APPLICATIONS.forEach(function(a){
+    if(a.status==='Approved'||a.status==='Disbursed')counts.approved++;
+    else if(a.status==='Rejected')counts.rejected++;
+    else counts.inprocess++;
+  });
+  ['all','approved','inprocess','rejected'].forEach(function(k){
+    var el=document.getElementById('appCount-'+k);if(el)el.textContent=counts[k];
+  });
+  var filtered=APPLICATIONS.filter(function(a){
+    if(appFilter==='all')return true;
+    if(appFilter==='Approved')return a.status==='Approved'||a.status==='Disbursed';
+    if(appFilter==='In Process')return a.status!=='Approved'&&a.status!=='Disbursed'&&a.status!=='Rejected';
+    if(appFilter==='Rejected')return a.status==='Rejected';
+    return true;
+  });
+  var tt=document.getElementById('appTableTitle');
+  if(tt)tt.textContent=appFilter==='all'?'All Applications':'Queue: '+appFilter;
+  var tbody=document.getElementById('appTableBody');
+  var empty=document.getElementById('appEmpty');
+  if(!filtered.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';return;}
+  if(empty)empty.style.display='none';
+  if(!tbody)return;
+  tbody.innerHTML=filtered.map(function(a){
+    return '<tr><td style="padding:11px 20px"><div class="lead-name">'+a.name+'</div></td><td style="font-size:13px;color:var(--text2)">'+a.ltype+'</td><td style="font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:700;color:var(--text)">'+fmtINR(a.amount)+'</td><td style="font-size:12px;color:var(--text2)">'+a.bank+'</td><td>'+statusBadge(a.status)+'</td><td style="font-size:12px;color:var(--text3)">'+fmtDate(a.submitted)+'</td><td style="font-size:12px;color:var(--text3)">'+a.expected+'</td><td><button onclick="viewApp('+a.id+')" style="font-size:12px;font-weight:600;color:var(--brand);background:none;border:1px solid var(--brand);border-radius:6px;padding:4px 10px;cursor:pointer">View</button></td></tr>';
+  }).join('');
+}
+function viewApp(id){
+  var a=APPLICATIONS.find(function(x){return x.id===id;});if(!a)return;
+  var m=document.getElementById('appModal');m.style.display='flex';
+  document.getElementById('appModalBody').innerHTML='<div style="display:flex;flex-direction:column;gap:12px"><div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:3px">Applicant</div><div style="font-weight:600;color:var(--text)">'+a.name+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:3px">App No.</div><div style="font-weight:600;color:var(--text)">'+a.appNo+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:3px">Loan Type</div><div style="font-weight:600;color:var(--text)">'+a.ltype+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:3px">Amount</div><div style="font-weight:700;color:var(--brand)">'+fmtINR(a.amount)+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:3px">Bank</div><div style="font-weight:600;color:var(--text)">'+a.bank+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:12px"><div style="font-size:10px;font-weight:700;text-transform:uppercase;color:var(--text3);margin-bottom:3px">Status</div>'+statusBadge(a.status)+'</div></div><div style="display:flex;gap:8px"><button onclick="updateAppStatus('+a.id+',\'Approved\')" style="flex:1;height:38px;background:var(--green);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer">Approve</button><button onclick="updateAppStatus('+a.id+',\'Rejected\')" style="flex:1;height:38px;background:var(--red);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer">Reject</button><button onclick="document.getElementById(\'appModal\').style.display=\'none\'" style="flex:1;height:38px;background:#f3f4f6;color:var(--text);border:none;border-radius:8px;font-size:12px;font-weight:700;cursor:pointer">Close</button></div></div>';
+}
+function updateAppStatus(id,status){
+  var a=APPLICATIONS.find(function(x){return x.id===id;});if(a){a.status=status;}
+  var l=LEADS.find(function(x){return x.id===id;});if(l){l.status=status;}
+  document.getElementById('appModal').style.display='none';
+  renderApps();showToast('Application status updated to '+status);
+}
+
+/* ══════════════════════════════════
+   3. COMMISSIONS
+══════════════════════════════════ */
+function renderComm(){
+  var disbursed=LEADS.filter(function(l){return l.status==='Disbursed'||l.status==='Approved';});
+  var tbody=document.getElementById('commTableBody');
+  var empty=document.getElementById('commEmpty');
+  if(!disbursed.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';return;}
+  if(empty)empty.style.display='none';
+  if(!tbody)return;
+  tbody.innerHTML=disbursed.map(function(l){
+    var rate=0.01,comm=Math.round(l.amount*rate);
+    return '<tr><td style="padding:11px 20px"><div class="lead-name">'+l.name+'</div></td><td style="font-size:13px;color:var(--text2)">'+l.ltype+'</td><td style="font-family:\'Plus Jakarta Sans\',sans-serif;font-weight:700;color:var(--text)">'+fmtINR(l.amount)+'</td><td style="font-size:13px;color:var(--text2)">'+l.bank+'</td><td style="font-size:13px;color:var(--text2)">1.0%</td><td style="font-weight:700;color:var(--green);font-family:\'Plus Jakarta Sans\',sans-serif">'+fmtINR(comm)+'</td><td style="font-size:12px;color:var(--text3)">'+fmtDate(l.date)+'</td><td>'+statusBadge(l.status==='Disbursed'?'Credited':'Pending')+'</td></tr>';
+  }).join('');
+}
+function downloadCommPDF(){
+  var disbursed=LEADS.filter(function(l){return l.status==='Disbursed'||l.status==='Approved';});
+  if(!disbursed.length){showToast('No commission records to download','error');return;}
+  var rows=disbursed.map(function(l){return l.name+','+l.ltype+','+fmtINR(l.amount)+','+l.bank+',1.0%,'+fmtINR(Math.round(l.amount*0.01))+','+fmtDate(l.date);}).join('\n');
+  var csv='Customer,Loan Type,Amount,Bank,Rate,Commission,Date\n'+rows;
+  var blob=new Blob([csv],{type:'text/csv'});var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=url;a.download='Commission_Report_'+todayStr()+'.csv';a.click();URL.revokeObjectURL(url);
+  showToast('Commission report downloaded ✅');
+}
+
+/* ══════════════════════════════════
+   4. FOLLOW-UPS
+══════════════════════════════════ */
+function openFollowupModal(){
+  var m=document.getElementById('followupModal');m.style.display='flex';
+  ['fu_name','fu_phone','fu_notes'].forEach(function(id){var e=document.getElementById(id);if(e)e.value='';});
+  document.getElementById('fu_date').value=todayStr();
+  document.getElementById('fu_time').value='10:00';
+  document.getElementById('fu_purpose').value='';
+  document.getElementById('fu_ltype').value='';
+}
+function closeFollowupModal(){document.getElementById('followupModal').style.display='none';}
+function saveFollowup(){
+  var name=document.getElementById('fu_name').value.trim();
+  var date=document.getElementById('fu_date').value;
+  var purpose=document.getElementById('fu_purpose').value;
+  if(!name){showToast('Please enter customer name','error');return;}
+  if(!date){showToast('Please select a date','error');return;}
+  if(!purpose){showToast('Please select purpose','error');return;}
+  FOLLOWUPS.unshift({id:Date.now(),name:name,phone:document.getElementById('fu_phone').value.trim(),date:date,time:document.getElementById('fu_time').value||'',purpose:purpose,ltype:document.getElementById('fu_ltype').value,notes:document.getElementById('fu_notes').value.trim()});
+  closeFollowupModal();renderFollowups();showToast('Follow-up scheduled ✅');
+}
+function renderFollowups(){
+  var today=todayStr();
+  var nextWeek=new Date();nextWeek.setDate(nextWeek.getDate()+7);var nws=nextWeek.toISOString().slice(0,10);
+  var todayItems=FOLLOWUPS.filter(function(f){return f.date===today;});
+  var upcomingItems=FOLLOWUPS.filter(function(f){return f.date>today&&f.date<=nws;});
+  var st=document.getElementById('fuSubtitle');if(st)st.textContent=FOLLOWUPS.length+' follow-up'+(FOLLOWUPS.length!==1?'s':'')+' scheduled';
+  var tc=document.getElementById('fuTodayCount');if(tc)tc.textContent=todayItems.length+' task'+(todayItems.length!==1?'s':'');
+  var uc=document.getElementById('fuUpcomingCount');if(uc)uc.textContent=upcomingItems.length+' task'+(upcomingItems.length!==1?'s':'');
+  var tl=document.getElementById('fuTodayList');
+  if(tl){tl.innerHTML=todayItems.length?todayItems.map(function(f){return fuCard(f,'var(--red-bg)','var(--red)');}).join(''):'<div style="text-align:center;padding:36px 20px;color:var(--text3)"><div style="font-size:32px;margin-bottom:8px">🎉</div><div style="font-size:13px;font-weight:500">No follow-ups due today</div></div>';}
+  var ul=document.getElementById('fuUpcomingList');
+  if(ul){ul.innerHTML=upcomingItems.length?upcomingItems.map(function(f){return fuCard(f,'var(--brand-light)','var(--brand)');}).join(''):'<div style="text-align:center;padding:36px 20px;color:var(--text3)"><div style="font-size:32px;margin-bottom:8px">📭</div><div style="font-size:13px;font-weight:500">No upcoming follow-ups</div></div>';}
+}
+function fuCard(f,bg,col){
+  return '<div class="activity-item"><div class="act-icon" style="background:'+bg+'"><svg viewBox="0 0 14 14" fill="none" stroke="'+col+'" stroke-width="2" stroke-linecap="round" width="14" height="14"><circle cx="7" cy="5" r="3"/><path d="M2 13c0-2.8 2.2-5 5-5s5 2.2 5 5"/></svg></div><div style="flex:1"><div class="act-text"><strong>'+f.name+'</strong> — '+f.purpose+'</div><div class="act-time">'+f.date+(f.time?' · '+f.time:'')+(f.ltype?' · '+f.ltype:'')+(f.phone?' · '+f.phone:'')+'</div>'+(f.notes?'<div style="font-size:11px;color:var(--text3);margin-top:2px">📝 '+f.notes+'</div>':'')+'</div><button onclick="deleteFollowup('+f.id+')" style="font-size:10px;color:var(--red);background:none;border:none;cursor:pointer;padding:4px;margin-left:8px">✕</button></div>';
+}
+function deleteFollowup(id){FOLLOWUPS=FOLLOWUPS.filter(function(f){return f.id!==id;});renderFollowups();showToast('Follow-up removed');}
+
+/* ══════════════════════════════════
+   5. EMI CALCULATOR
+══════════════════════════════════ */
+var scheduleMode='year';
+function calcEMI(){
+  var P=parseFloat(document.getElementById('emiAmt')&&document.getElementById('emiAmt').value)||0;
+  var rY=parseFloat(document.getElementById('emiRate')&&document.getElementById('emiRate').value)||0;
+  var tVal=parseFloat(document.getElementById('emiTenure')&&document.getElementById('emiTenure').value)||0;
+  var tUnit=(document.getElementById('emiTenureUnit')||{}).value||'years';
+  var n=tUnit==='years'?Math.round(tVal*12):Math.round(tVal);
+  var r=rY/12/100;
+  var emi=0,interest=0,total=0;
+  if(P>0&&r>0&&n>0){emi=P*r*Math.pow(1+r,n)/(Math.pow(1+r,n)-1);total=emi*n;interest=total-P;}
+  else if(P>0&&r===0&&n>0){emi=P/n;total=P;interest=0;}
+  var er=document.getElementById('emiResult');if(er)er.textContent=fmtINR(emi);
+  var ep=document.getElementById('emiPrincipal');if(ep)ep.textContent=fmtINR(P);
+  var ei=document.getElementById('emiInterest');if(ei)ei.textContent=fmtINR(interest);
+  var et=document.getElementById('emiTotal');if(et)et.textContent=fmtINR(total);
+  var pPct=total>0?Math.round(P/total*100):0;
+  var bp=document.getElementById('emiBarP');if(bp)bp.style.width=pPct+'%';
+  var bi=document.getElementById('emiBarI');if(bi)bi.style.flex='1';
+  var pp=document.getElementById('emiPct');if(pp)pp.textContent=pPct+'%';
+  var ip=document.getElementById('emiIPct');if(ip)ip.textContent=(100-pPct)+'%';
+  buildSchedule(P,r,n,emi);
+}
+function buildSchedule(P,r,n,emi){
+  var bal=P,rows=[];
+  for(var m=1;m<=n;m++){
+    var intPart=bal*r,prinPart=emi-intPart;
+    if(bal<=0){intPart=0;prinPart=0;}
+    bal=Math.max(0,bal-prinPart);
+    rows.push({month:m,emi:emi,prin:prinPart,int:intPart,bal:bal});
+  }
+  // Store for download
+  window._emiRows=rows;window._emiMonths=n;window._emiAmt=P;
+  showSchedule(scheduleMode,rows);
+}
+function showSchedule(mode,rows){
+  scheduleMode=mode;
+  rows=rows||window._emiRows||[];
+  var n=window._emiMonths||0;
+  var sb=document.getElementById('schedBtnYear'),sm=document.getElementById('schedBtnMonth');
+  if(sb)sb.style.cssText=(mode==='year'?'padding:5px 12px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--brand);box-shadow:0 1px 3px rgba(0,0,0,.08)':'padding:5px 12px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--text3)');
+  if(sm)sm.style.cssText=(mode==='month'?'padding:5px 12px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;background:#fff;color:var(--brand);box-shadow:0 1px 3px rgba(0,0,0,.08)':'padding:5px 12px;border-radius:6px;border:none;font-size:12px;font-weight:600;cursor:pointer;background:transparent;color:var(--text3)');
+  var cl=document.getElementById('schedColLabel');
+  var ss=document.getElementById('scheduleSubtitle');
+  var tbody=document.getElementById('scheduleBody');if(!tbody)return;
+  if(mode==='year'){
+    if(cl)cl.textContent='Year';if(ss)ss.textContent='Year-wise breakup';
+    var years={};
+    rows.forEach(function(r){var y=Math.ceil(r.month/12);if(!years[y])years[y]={year:y,emi:0,prin:0,int:0,open:0,close:0};years[y].emi+=r.emi;years[y].prin+=r.prin;years[y].int+=r.int;});
+    var yArr=Object.values(years);var bal=window._emiAmt||0;
+    yArr.forEach(function(y){y.open=bal;bal=Math.max(0,bal-y.prin);y.close=bal;});
+    tbody.innerHTML=yArr.map(function(y){return '<tr><td style="padding:10px 20px;font-weight:600;color:var(--text)">Year '+y.year+'</td><td style="font-size:13px;color:var(--text2)">'+fmtINR(y.open)+'</td><td style="font-size:13px;color:var(--brand);font-weight:600">'+fmtINR(y.emi)+'</td><td style="font-size:13px;color:var(--text)">'+fmtINR(y.prin)+'</td><td style="font-size:13px;color:var(--red)">'+fmtINR(y.int)+'</td><td style="font-size:13px;color:var(--green);font-weight:600">'+fmtINR(y.close)+'</td></tr>';}).join('');
+  } else {
+    if(cl)cl.textContent='Month';if(ss)ss.textContent='Month-wise breakup ('+n+' months)';
+    var bal=window._emiAmt||0;
+    tbody.innerHTML=rows.map(function(r){var op=bal;bal=Math.max(0,bal-r.prin);return '<tr><td style="padding:8px 20px;font-weight:600;color:var(--text)">Month '+r.month+'</td><td style="font-size:13px;color:var(--text2)">'+fmtINR(op)+'</td><td style="font-size:13px;color:var(--brand);font-weight:600">'+fmtINR(r.emi)+'</td><td style="font-size:13px;color:var(--text)">'+fmtINR(r.prin)+'</td><td style="font-size:13px;color:var(--red)">'+fmtINR(r.int)+'</td><td style="font-size:13px;color:var(--green);font-weight:600">'+fmtINR(r.close)+'</td></tr>';}).join('');
+  }
+}
+function downloadEMI(){
+  var rows=window._emiRows||[];if(!rows.length){showToast('Calculate EMI first','error');return;}
+  var csv='Month,Opening Balance,EMI,Principal,Interest,Closing Balance\n'+rows.map(function(r,i){var op=i===0?(window._emiAmt||0):rows[i-1]?Math.max(0,window._emiAmt-rows.slice(0,i).reduce(function(s,x){return s+x.prin;},0)):0;return r.month+','+Math.round(op)+','+Math.round(r.emi)+','+Math.round(r.prin)+','+Math.round(r.int)+','+Math.round(r.bal);}).join('\n');
+  var blob=new Blob([csv],{type:'text/csv'});var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=url;a.download='EMI_Schedule_'+todayStr()+'.csv';a.click();URL.revokeObjectURL(url);
+  showToast('EMI schedule downloaded ✅');
+}
+
+/* ══════════════════════════════════
+   6. REPORTS
+══════════════════════════════════ */
+function renderReports(){
+  var total=LEADS.length;
+  var disbursed=LEADS.filter(function(l){return l.status==='Disbursed';}).length;
+  var conv=total?Math.round(disbursed/total*100):0;
+  var totalComm=LEADS.filter(function(l){return l.status==='Disbursed'||l.status==='Approved';}).reduce(function(s,l){return s+Math.round(l.amount*0.01);},0);
+  var rc=document.getElementById('rptConv');if(rc)rc.textContent=conv+'%';
+  var rm=document.getElementById('rptComm');if(rm)rm.textContent=fmtINR(totalComm);
+  var rl=document.getElementById('rptLeads');if(rl)rl.textContent=total;
+  // Bank chart
+  var bankCounts={};LEADS.forEach(function(l){bankCounts[l.bank]=(bankCounts[l.bank]||0)+1;});
+  var maxB=Math.max.apply(null,Object.values(bankCounts).concat([1]));
+  var bc=document.getElementById('rptBankChart');
+  if(bc){if(!Object.keys(bankCounts).length){bc.innerHTML='<div style="text-align:center;padding:32px;color:var(--text3)">No leads yet</div>';}else{bc.innerHTML=Object.entries(bankCounts).sort(function(a,b){return b[1]-a[1];}).map(function(e){var pct=Math.round(e[1]/maxB*100);return '<div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px"><span style="font-weight:600;color:var(--text)">'+e[0]+'</span><span style="color:var(--text3)">'+e[1]+' lead'+(e[1]!==1?'s':'')+'</span></div><div style="height:8px;background:#f3f4f6;border-radius:4px"><div style="height:100%;width:'+pct+'%;background:var(--brand);border-radius:4px;transition:width .4s"></div></div></div>';}).join('');}}
+  // Type chart
+  var typeCounts={};LEADS.forEach(function(l){typeCounts[l.ltype]=(typeCounts[l.ltype]||0)+1;});
+  var maxT=Math.max.apply(null,Object.values(typeCounts).concat([1]));
+  var tc=document.getElementById('rptTypeChart');
+  if(tc){if(!Object.keys(typeCounts).length){tc.innerHTML='<div style="text-align:center;padding:32px;color:var(--text3)">No leads yet</div>';}else{tc.innerHTML=Object.entries(typeCounts).sort(function(a,b){return b[1]-a[1];}).map(function(e){var pct=Math.round(e[1]/maxT*100);return '<div style="margin-bottom:12px"><div style="display:flex;justify-content:space-between;font-size:12.5px;margin-bottom:4px"><span style="font-weight:600;color:var(--text)">'+e[0]+'</span><span style="color:var(--text3)">'+e[1]+' lead'+(e[1]!==1?'s':'')+'</span></div><div style="height:8px;background:#f3f4f6;border-radius:4px"><div style="height:100%;width:'+pct+'%;background:var(--green);border-radius:4px;transition:width .4s"></div></div></div>';}).join('');}}
+}
+function downloadReport(){
+  var rows=LEADS.map(function(l){return l.name+','+l.phone+','+l.ltype+','+fmtINR(l.amount)+','+l.bank+','+l.status+','+fmtDate(l.date);});
+  var csv='Customer,Mobile,Loan Type,Amount,Bank,Status,Date\n'+rows.join('\n');
+  if(!rows.length){csv='Customer,Mobile,Loan Type,Amount,Bank,Status,Date\n(No data)';}
+  var blob=new Blob([csv],{type:'text/csv'});var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');a.href=url;a.download='DSA_Naidu_Report_'+todayStr()+'.csv';a.click();URL.revokeObjectURL(url);
+  showToast('Report exported ✅');
+}
+
+/* ══════════════════════════════════
+   7. DOCUMENTS
+══════════════════════════════════ */
+var _docFileName='';
+function openDocModal(){
+  var m=document.getElementById('docModal');m.style.display='flex';
+  ['doc_cust','doc_notes'].forEach(function(id){var e=document.getElementById(id);if(e)e.value='';});
+  document.getElementById('doc_type').value='';document.getElementById('doc_ltype').value='';
+  document.getElementById('docFileName').textContent='';_docFileName='';
+  document.getElementById('docFile').value='';
+}
+function closeDocModal(){document.getElementById('docModal').style.display='none';}
+function handleDocSelect(input){if(input.files&&input.files[0]){_docFileName=input.files[0].name;document.getElementById('docFileName').textContent='✅ Selected: '+_docFileName;}}
+function handleDocDrop(e){e.preventDefault();document.getElementById('dropzone').style.background='';if(e.dataTransfer.files&&e.dataTransfer.files[0]){_docFileName=e.dataTransfer.files[0].name;document.getElementById('docFileName').textContent='✅ Selected: '+_docFileName;}}
+function saveDocument(){
+  var cust=document.getElementById('doc_cust').value.trim();
+  var dtype=document.getElementById('doc_type').value;
+  if(!cust){showToast('Please enter customer name','error');return;}
+  if(!dtype){showToast('Please select document type','error');return;}
+  if(!_docFileName){showToast('Please select a file','error');return;}
+  var ext=_docFileName.split('.').pop().toUpperCase();
+  DOCUMENTS.unshift({id:Date.now(),name:_docFileName,cust:cust,type:dtype,ltype:document.getElementById('doc_ltype').value||'—',notes:document.getElementById('doc_notes').value.trim(),date:new Date(),status:'Pending',ext:ext});
+  closeDocModal();renderDocs();showToast('Document uploaded ✅');
+}
+function renderDocs(){
+  var q=(document.getElementById('docSearch')||{}).value||'';
+  var filtered=DOCUMENTS.filter(function(d){return !q||d.name.toLowerCase().includes(q.toLowerCase())||d.cust.toLowerCase().includes(q.toLowerCase());});
+  var total=DOCUMENTS.length,pending=DOCUMENTS.filter(function(d){return d.status==='Pending';}).length,verified=DOCUMENTS.filter(function(d){return d.status==='Verified';}).length;
+  var ct=document.getElementById('docCountTotal');if(ct)ct.textContent=total;
+  var cp=document.getElementById('docCountPending');if(cp)cp.textContent=pending;
+  var cv=document.getElementById('docCountVerified');if(cv)cv.textContent=verified;
+  var sub=document.getElementById('docSubtitle');if(sub)sub.textContent=total+' document'+(total!==1?'s':'')+' uploaded';
+  var tbody=document.getElementById('docTableBody');
+  var empty=document.getElementById('docEmpty');
+  if(!filtered.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';return;}
+  if(empty)empty.style.display='none';
+  if(!tbody)return;
+  var extColors={PDF:'#fee2e2',IMG:'#dbeafe',JPG:'#dbeafe',JPEG:'#dbeafe',PNG:'#dbeafe',XLS:'#d1fae5',XLSX:'#d1fae5'};
+  var extText={PDF:'#dc2626',IMG:'#1a56db',JPG:'#1a56db',JPEG:'#1a56db',PNG:'#1a56db',XLS:'#059669',XLSX:'#059669'};
+  tbody.innerHTML=filtered.map(function(d){
+    var bg=extColors[d.ext]||'#f3f4f6',tc=extText[d.ext]||'#374151';
+    return '<tr><td style="padding:10px 20px"><div style="display:flex;align-items:center;gap:8px"><div style="width:28px;height:28px;background:'+bg+';border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:'+tc+'">'+d.ext+'</div><div style="font-size:13px;font-weight:600;color:var(--text);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">'+d.name+'</div></div></td><td style="font-size:13px;color:var(--text2)">'+d.cust+'</td><td style="font-size:12px;color:var(--text3)">'+d.type+'</td><td style="font-size:12px;color:var(--text3)">'+d.ltype+'</td><td style="font-size:12px;color:var(--text3)">'+fmtDate(d.date)+'</td><td>'+statusBadge(d.status)+'</td><td><div style="display:flex;gap:4px"><button onclick="verifyDoc('+d.id+')" style="font-size:11px;font-weight:600;color:var(--green);background:none;border:1px solid var(--green);border-radius:5px;padding:3px 8px;cursor:pointer">Verify</button><button onclick="deleteDoc('+d.id+')" style="font-size:11px;font-weight:600;color:var(--red);background:none;border:1px solid var(--red);border-radius:5px;padding:3px 8px;cursor:pointer">Del</button></div></td></tr>';
+  }).join('');
+}
+function verifyDoc(id){var d=DOCUMENTS.find(function(x){return x.id===id;});if(d){d.status='Verified';renderDocs();showToast('Document verified ✅');}}
+function deleteDoc(id){DOCUMENTS=DOCUMENTS.filter(function(x){return x.id!==id;});renderDocs();showToast('Document deleted');}
+
+/* ══════════════════════════════════
+   8. BANK PARTNERS
+══════════════════════════════════ */
+var KNOWN_BANKS=['State Bank of India','SBI','HDFC Bank','ICICI Bank','Axis Bank','Kotak Mahindra Bank','Punjab National Bank','PNB','Bank of Baroda','BOB','Canara Bank','Union Bank','IDBI Bank','YES Bank','IndusInd Bank','Federal Bank','South Indian Bank','Karnataka Bank','City Union Bank','Bandhan Bank','RBL Bank','DCB Bank'];
+
+function openBankModal(){
+  var m=document.getElementById('bankModal');m.style.display='flex';
+  ['bk_name','bk_code','bk_rm','bk_rmphone','bk_location','bk_rate','bk_products','bk_policy'].forEach(function(id){var e=document.getElementById(id);if(e)e.value='';});
+  document.getElementById('bk_status').value='Active';
+}
+function closeBankModal(){document.getElementById('bankModal').style.display='none';}
+function saveBank(){
+  var name=document.getElementById('bk_name').value.trim();
+  var rm=document.getElementById('bk_rm').value.trim();
+  var loc=document.getElementById('bk_location').value.trim();
+  if(!name){showToast('Please enter bank name','error');return;}
+  if(!rm){showToast('Please enter banker/RM name','error');return;}
+  if(!loc){showToast('Please enter branch location','error');return;}
+  BANKS.push({id:Date.now(),name:name,code:(document.getElementById('bk_code').value||name.slice(0,4)).toUpperCase(),rm:rm,rmphone:document.getElementById('bk_rmphone').value.trim(),location:loc,rate:document.getElementById('bk_rate').value.trim()||'N/A',products:document.getElementById('bk_products').value.trim()||'N/A',status:document.getElementById('bk_status').value,policy:document.getElementById('bk_policy').value.trim()});
+  closeBankModal();renderBanks();showToast('Bank partner added ✅');
+}
+function renderBanks(){
+  var grid=document.getElementById('bankGrid');if(!grid)return;
+  var sub=document.getElementById('bankSubtitle');if(sub)sub.textContent=BANKS.length+' partner'+(BANKS.length!==1?'s':'')+' added';
+  var colors=['#1a56db','#059669','#f97316','#6d28d9','#dc2626','#0891b2','#d97706','#7c3aed'];
+  var cards=BANKS.map(function(b,i){
+    var col=colors[i%colors.length];
+    return '<div style="background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px"><div style="display:flex;align-items:center;gap:12px;margin-bottom:14px"><div style="width:42px;height:42px;border-radius:10px;background:'+col+';display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:#fff;font-family:\'Plus Jakarta Sans\',sans-serif">'+b.code.slice(0,4)+'</div><div><div style="font-weight:700;font-size:14px;color:var(--text)">'+b.name+'</div><div style="font-size:11px;color:'+(b.status==='Active'?'var(--green)':b.status==='Inactive'?'var(--red)':'var(--yellow)')+';font-weight:600;margin-top:1px">● '+b.status+'</div></div></div><div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:12px"><div style="background:#f9fafb;border-radius:8px;padding:10px;text-align:center"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px">Commission</div><div style="font-weight:700;color:var(--text);font-size:14px">'+(b.rate||'—')+'</div></div><div style="background:#f9fafb;border-radius:8px;padding:10px;text-align:center"><div style="font-size:10px;color:var(--text3);text-transform:uppercase;letter-spacing:.4px;margin-bottom:3px">Location</div><div style="font-weight:700;color:var(--text);font-size:13px">'+(b.location||'—')+'</div></div></div><div style="font-size:12px;color:var(--text3);line-height:1.7">'+(b.products||'N/A')+'<br>RM: '+b.rm+(b.rmphone?' · '+b.rmphone:'')+'</div>'+(b.policy?'<details style="margin-top:10px"><summary style="font-size:12px;font-weight:600;color:var(--brand);cursor:pointer">View Policy</summary><div style="font-size:11.5px;color:var(--text2);margin-top:6px;background:#f9fafb;border-radius:6px;padding:8px;max-height:80px;overflow-y:auto;line-height:1.6">'+b.policy+'</div></details>':'')+'<button onclick="deleteBank('+b.id+')" style="margin-top:10px;width:100%;height:32px;background:#fef2f2;color:var(--red);border:1px solid #fca5a5;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer">Remove Partner</button></div>';
+  });
+  // Add button at end
+  var addCard='<div onclick="openBankModal()" style="padding:20px;border:2px dashed var(--border);background:#fafafa;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;min-height:180px;cursor:pointer;transition:all .15s" onmouseover="this.style.borderColor=\'var(--brand)\'" onmouseout="this.style.borderColor=\'var(--border)\'"><div style="width:42px;height:42px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;margin-bottom:10px"><svg viewBox="0 0 16 16" fill="none" stroke="var(--text3)" stroke-width="2" stroke-linecap="round" width="18" height="18"><path d="M8 2v12M2 8h12"/></svg></div><div style="font-weight:600;font-size:13px;color:var(--text2)">Add Bank Partner</div><div style="font-size:11.5px;color:var(--text3);margin-top:4px">Connect with banks & NBFCs</div></div>';
+  grid.innerHTML=cards.join('')+addCard;
+}
+function deleteBank(id){BANKS=BANKS.filter(function(b){return b.id!==id;});renderBanks();showToast('Bank partner removed');}
+
+/* ══════════════════════════════════
+   INIT
+══════════════════════════════════ */
+startTimer();
+calcEMI();
+
+
+/* ═══ NEW FEATURES (Login/Register/Admin/Bank Partner Enhancements) ═══ */
+
+/* ═══════════════════════════════════════
+   DATA STORES
+═══════════════════════════════════════ */
+var DSA_USERS=[
+  {id:1,name:'Demo DSA',mobile:'9876543210',pwd:'demo123',type:'Individual DSA',city:'Hyderabad',email:'demo@dsa.com',status:'Approved',date:new Date()}
+];
+var BANKER_CONTACTS=[];
+var CHAT_MESSAGES={};
+var _activeBankerId=null;
+var _currentBankTab='all';
+var _currentLoanType='bl';
+
+/* ═══════════════════════════════════════
+   LOGIN FUNCTIONS
+═══════════════════════════════════════ */
+function setLoginMode(mode){
+  ['login','register','admin'].forEach(function(m){
+    var p=document.getElementById('lmt-'+m);
+    if(p) p.className='login-panel'+(m===mode?' active':'');
+  });
+  document.querySelectorAll('.login-tab').forEach(function(btn,i){
+    btn.className='login-tab'+(i===['login','register','admin'].indexOf(mode)?' active':'');
+  });
+}
+
+function loginWithPwd(){
+  var mob=(document.getElementById('loginMobile').value||'').trim();
+  var pwd=document.getElementById('loginPwd').value||'';
+  if(!mob||mob.length!==10){showToast('Enter valid 10-digit mobile','error');return;}
+  if(!pwd){showToast('Enter your password','error');return;}
+  var user=DSA_USERS.find(function(u){return u.mobile===mob&&u.pwd===pwd;});
+  if(!user){showToast('Invalid mobile or password','error');return;}
+  if(user.status==='Pending'){showToast('Account pending admin approval. Contact admin.','error');return;}
+  if(user.status==='Rejected'){showToast('Registration was rejected. Contact admin.','error');return;}
+  openDashboard(user.name);
+}
+
+function loginDemo(){openDashboard('Demo User');}
+
+function registerDSA(){
+  var name=(document.getElementById('reg_name').value||'').trim();
+  var mob=(document.getElementById('reg_mobile').value||'').trim();
+  var pwd=document.getElementById('reg_pwd').value||'';
+  var pwd2=document.getElementById('reg_pwd2').value||'';
+  var st=document.getElementById('regStatus');
+  if(!name){showToast('Enter your full name','error');return;}
+  if(!mob||mob.length!==10){showToast('Enter valid 10-digit mobile','error');return;}
+  if(!pwd||pwd.length<6){showToast('Password must be at least 6 characters','error');return;}
+  if(pwd!==pwd2){showToast('Passwords do not match','error');return;}
+  if(DSA_USERS.find(function(u){return u.mobile===mob;})){showToast('Mobile already registered','error');return;}
+  DSA_USERS.push({
+    id:Date.now(),name:name,mobile:mob,pwd:pwd,
+    type:document.getElementById('reg_type').value,
+    city:(document.getElementById('reg_city').value||'').trim(),
+    email:(document.getElementById('reg_email').value||'').trim(),
+    status:'Pending',date:new Date()
+  });
+  if(st){
+    st.style.display='block';
+    st.style.cssText='display:block;margin-top:12px;padding:12px 14px;border-radius:10px;font-size:13px;font-weight:600;text-align:center;background:#fffbeb;border:1px solid #fde68a;color:#92400e';
+    st.textContent='✅ Registration submitted! Pending admin approval.';
+  }
+  ['reg_name','reg_mobile','reg_pwd','reg_pwd2','reg_city','reg_email'].forEach(function(id){var e=document.getElementById(id);if(e)e.value='';});
+  showToast('Registration submitted — awaiting approval');
+}
+
+function loginAdmin(){
+  var mob=(document.getElementById('adminMobile').value||'').trim();
+  var pwd=document.getElementById('adminPwd').value||'';
+  if(mob==='9999999999'&&pwd==='admin123'){
+    document.getElementById('loginPage').style.display='none';
+    document.getElementById('adminPage').style.display='block';
+    renderAdminTable();renderPendingTable();updateAdminKPIs();
+  } else {
+    showToast('Invalid admin credentials','error');
+  }
+}
+function logOutAdmin(){
+  document.getElementById('adminPage').style.display='none';
+  document.getElementById('loginPage').style.display='flex';
+  document.getElementById('adminMobile').value='';
+  document.getElementById('adminPwd').value='';
+}
+
+/* Override openDashboard to use new login flow */
+var _origOpenDashboard=openDashboard;
+openDashboard=function(name){
+  name=(name||'').trim();
+  var parts=name.split(' ');
+  var initials=(parts[0]?parts[0][0]:'D')+(parts[1]?parts[1][0]:'N');
+  var e=document.getElementById('sbAv');if(e)e.textContent=initials.toUpperCase();
+  e=document.getElementById('sbName');if(e)e.textContent=name||'DSA User';
+  var hr=new Date().getHours(),g=hr<12?'Good morning':hr<17?'Good afternoon':'Good evening';
+  e=document.getElementById('greetName');if(e)e.textContent=g+', '+(parts[0]||'there')+'! 👋';
+  document.getElementById('loginPage').style.display='none';
+  document.getElementById('dashPage').style.display='block';
+  document.body.style.background='var(--bg)';window.scrollTo(0,0);
+  navTo('dashboard');
+};
+
+/* ═══════════════════════════════════════
+   BANK LOAN TYPE SELECTION
+═══════════════════════════════════════ */
+function selectLoanType(lt){
+  _currentLoanType=lt;
+  ['bl','pl','hl','lap'].forEach(function(t){
+    var b=document.getElementById('bmt-'+t);
+    if(b) b.className='loan-type-btn'+(t===lt?' selected':'');
+  });
+}
+
+/* ═══════════════════════════════════════
+   BANK TAB FILTER
+═══════════════════════════════════════ */
+function filterBankTab(tab){
+  _currentBankTab=tab;
+  document.querySelectorAll('.bank-tab').forEach(function(btn){btn.classList.remove('active');});
+  var tb=document.getElementById('bptab-'+tab);if(tb)tb.classList.add('active');
+  renderBanks();
+}
+
+/* ═══════════════════════════════════════
+   BANK PARTNERS (override renderBanks)
+═══════════════════════════════════════ */
+var BANK_COLORS=['#1a56db','#059669','#f97316','#6d28d9','#dc2626','#0891b2','#d97706','#7c3aed','#0f766e','#be185d'];
+var LT_LABELS={bl:'💼 Business',pl:'👤 Personal',hl:'🏡 Housing',lap:'🏢 LAP'};
+
+function getLoanTag(lt){
+  return '<span class="loan-tag '+(lt||'bl')+'">'+(LT_LABELS[lt]||lt||'—')+'</span>';
+}
+
+renderBanks=function(){
+  var grid=document.getElementById('bankGrid');if(!grid)return;
+  var filtered=_currentBankTab==='all'?BANKS:BANKS.filter(function(b){return b.loantype===_currentBankTab;});
+  var sub=document.getElementById('bankSubtitle');
+  if(sub)sub.textContent=BANKS.length+' partner'+(BANKS.length!==1?'s':'')+' · '+filtered.length+' shown';
+  _renderBankCards(filtered);
+};
+
+function _renderBankCards(list){
+  var grid=document.getElementById('bankGrid');if(!grid)return;
+  var cards=list.map(function(b,i){
+    var col=BANK_COLORS[i%BANK_COLORS.length];
+    var statRows='';
+    if(b.roi)     statRows+='<div class="bank-stat-box"><div class="bank-stat-lbl">ROI</div><div class="bank-stat-val">'+b.roi+'</div></div>';
+    if(b.rate&&b.rate!=='N/A') statRows+='<div class="bank-stat-box"><div class="bank-stat-lbl">Commission</div><div class="bank-stat-val">'+b.rate+'</div></div>';
+    if(!statRows)  statRows='<div class="bank-stat-box"><div class="bank-stat-lbl">Commission</div><div class="bank-stat-val">'+(b.rate||'—')+'</div></div><div class="bank-stat-box"><div class="bank-stat-lbl">Location</div><div class="bank-stat-val">'+b.location+'</div></div>';
+    return '<div class="bank-card">'
+      +'<div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">'
+        +'<div class="bank-avatar" style="background:'+col+'">'+b.code.slice(0,4)+'</div>'
+        +'<div><div style="font-weight:700;font-size:14px;color:var(--text)">'+b.name+'</div>'
+        +'<div style="font-size:11px;font-weight:600;margin-top:2px;color:'+(b.status==='Active'?'var(--green)':b.status==='Inactive'?'var(--red)':'var(--yellow)')+'">● '+b.status+'</div></div>'
+      +'</div>'
+      +'<div style="margin-bottom:9px">'+getLoanTag(b.loantype)+'</div>'
+      +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px">'+statRows+'</div>'
+      +'<div style="font-size:12px;color:var(--text3);line-height:1.65;margin-bottom:10px">'
+        +'📍 '+b.location+'<br>'
+        +'👤 '+b.rm+(b.rmphone?' · <a href="tel:'+b.rmphone+'" style="color:var(--brand)">'+b.rmphone+'</a>':'')
+        +(b.rmemail?'<br>✉️ <a href="mailto:'+b.rmemail+'" style="color:var(--brand)">'+b.rmemail+'</a>':'')
+        +(b.cibil?'<br>💳 CIBIL: '+b.cibil:'')
+        +(b.tat?'<br>⏱️ TAT: '+b.tat:'')
+      +'</div>'
+      +(b.products&&b.products!=='N/A'?'<div style="font-size:11.5px;color:var(--text2);background:#f9fafb;border-radius:7px;padding:7px 10px;margin-bottom:10px;line-height:1.6">'+b.products+'</div>':'')
+      +(b.policy?'<details style="margin-bottom:10px"><summary style="font-size:12px;font-weight:700;color:var(--brand);cursor:pointer">📋 View Policy</summary><div style="font-size:11.5px;color:var(--text2);margin-top:6px;background:#f9fafb;border-radius:8px;padding:10px;max-height:90px;overflow-y:auto;line-height:1.6;white-space:pre-wrap">'+b.policy+'</div></details>':'')
+      +'<div style="display:flex;gap:7px">'
+        +'<button class="bank-act-btn view" onclick="chatWithBank('+b.id+')">💬 Chat RM</button>'
+        +'<button class="bank-act-btn chat" onclick="callBankRM('+b.id+')">📞 Call</button>'
+        +'<button class="bank-act-btn del" onclick="deleteBank('+b.id+')">✕ Remove</button>'
+      +'</div>'
+      +'</div>';
+  });
+  var addCard='<div class="bank-card-add" onclick="openBankModal()">'
+    +'<div style="width:44px;height:44px;border-radius:50%;background:#f3f4f6;display:flex;align-items:center;justify-content:center;margin-bottom:12px">'
+    +'<svg viewBox="0 0 16 16" fill="none" stroke="var(--text3)" stroke-width="2" stroke-linecap="round" width="20" height="20"><path d="M8 2v12M2 8h12"/></svg></div>'
+    +'<div style="font-weight:700;font-size:13px;color:var(--text2)">Add Bank Partner</div>'
+    +'<div style="font-size:11.5px;color:var(--text3);margin-top:4px">Connect with banks &amp; NBFCs</div>'
+    +'</div>';
+  grid.innerHTML=cards.join('')+addCard;
+}
+
+function callBankRM(id){
+  var b=BANKS.find(function(x){return x.id===id;});
+  if(b&&b.rmphone){window.location.href='tel:'+b.rmphone;}
+  else showToast('No phone number for this RM','error');
+}
+
+/* Override openBankModal + closeBankModal + saveBank */
+openBankModal=function(){
+  var m=document.getElementById('bankModal');if(m)m.style.display='flex';
+  ['bk_name','bk_code','bk_rm','bk_rmphone','bk_rmemail','bk_location','bk_rate','bk_roi','bk_cibil','bk_tat','bk_products','bk_policy'].forEach(function(id){var e=document.getElementById(id);if(e)e.value='';});
+  var s=document.getElementById('bk_status');if(s)s.value='Active';
+  var ps=document.getElementById('parseStatus');if(ps)ps.style.display='none';
+  selectLoanType('bl');
+};
+closeBankModal=function(){var m=document.getElementById('bankModal');if(m)m.style.display='none';};
+
+saveBank=function(){
+  var name=(document.getElementById('bk_name').value||'').trim();
+  var rm=(document.getElementById('bk_rm').value||'').trim();
+  var loc=(document.getElementById('bk_location').value||'').trim();
+  if(!name){showToast('Please enter bank/NBFC name','error');return;}
+  if(!rm){showToast('Please enter banker/RM name','error');return;}
+  if(!loc){showToast('Please enter branch location','error');return;}
+  BANKS.push({
+    id:Date.now(),
+    name:name,
+    code:((document.getElementById('bk_code').value||name.slice(0,4)).toUpperCase()).slice(0,4),
+    loantype:_currentLoanType,
+    rm:rm,
+    rmphone:(document.getElementById('bk_rmphone').value||'').trim(),
+    rmemail:(document.getElementById('bk_rmemail').value||'').trim(),
+    location:loc,
+    roi:(document.getElementById('bk_roi').value||'').trim(),
+    rate:(document.getElementById('bk_rate').value||'').trim()||'N/A',
+    cibil:(document.getElementById('bk_cibil').value||'').trim(),
+    tat:(document.getElementById('bk_tat').value||'').trim(),
+    products:(document.getElementById('bk_products').value||'').trim()||'N/A',
+    status:document.getElementById('bk_status').value,
+    policy:(document.getElementById('bk_policy').value||'').trim()
+  });
+  closeBankModal();renderBanks();showToast('Bank partner added successfully ✅');
+};
+
+/* Override deleteBank */
+deleteBank=function(id){
+  BANKS=BANKS.filter(function(b){return b.id!==id;});
+  BANKER_CONTACTS=BANKER_CONTACTS.filter(function(c){return c.id!==id;});
+  if(_activeBankerId===id){_activeBankerId=null;renderChatBody();}
+  renderBanks();renderBankerContacts();
+  showToast('Bank partner removed');
+};
+
+/* ═══════════════════════════════════════
+   AI SEARCH
+═══════════════════════════════════════ */
+function bankAISearchFn(q){
+  var box=document.getElementById('bankAIResults');
+  if(!q||q.length<2){if(box)box.classList.remove('show');renderBanks();return;}
+  var ql=q.toLowerCase();
+  var results=BANKS.map(function(b){
+    var score=0;
+    var fields=[b.name,b.rm,b.location,b.products,b.policy,b.roi,b.cibil,b.tat,b.rate,b.rmphone,b.rmemail];
+    fields.forEach(function(f){if(f&&f.toLowerCase().indexOf(ql)>=0)score+=10;});
+    q.split(' ').forEach(function(word){
+      if(word.length<2)return;
+      fields.forEach(function(f){if(f&&f.toLowerCase().indexOf(word.toLowerCase())>=0)score+=3;});
+    });
+    return{b:b,score:score};
+  }).filter(function(r){return r.score>0;}).sort(function(a,b){return b.score-a.score;});
+
+  if(box){
+    if(!results.length){
+      box.innerHTML='<div style="padding:14px;text-align:center;color:var(--text3);font-size:13px">No banks found for "'+q+'"</div>';
+      box.classList.add('show');
+    } else {
+      box.innerHTML=results.slice(0,7).map(function(r){
+        var b=r.b;
+        return '<div class="ai-result-item" onclick="highlightBankCard('+b.id+')">'
+          +'<div class="ai-result-bank">'+b.name
+          +'<span style="background:var(--brand-light);color:var(--brand);font-size:10px;font-weight:700;border-radius:20px;padding:1px 8px">'+(LT_LABELS[b.loantype]||b.loantype)+'</span>'
+          +(r.score>50?'<span style="background:var(--green-bg);color:var(--green);font-size:10px;font-weight:700;border-radius:20px;padding:1px 8px">Best Match</span>':'')
+          +'</div>'
+          +'<div class="ai-result-sub">'
+            +(b.roi?'ROI: '+b.roi+' · ':'')+''
+            +(b.tat?'TAT: '+b.tat+' · ':'')+''
+            +'📍 '+b.location
+          +'</div></div>';
+      }).join('');
+      box.classList.add('show');
+    }
+  }
+  // Filter cards in grid
+  _renderBankCards(results.map(function(r){return r.b;}));
+}
+
+function highlightBankCard(id){
+  var box=document.getElementById('bankAIResults');if(box)box.classList.remove('show');
+  renderBanks();showToast('Viewing: '+((BANKS.find(function(b){return b.id===id;})||{}).name||''));
+}
+
+function setBankSearch(q){
+  var inp=document.getElementById('bankAISearch');if(inp)inp.value=q;
+  bankAISearchFn(q);
+}
+function clearBankSearch(){
+  var inp=document.getElementById('bankAISearch');if(inp)inp.value='';
+  var box=document.getElementById('bankAIResults');if(box)box.classList.remove('show');
+  renderBanks();
+}
+
+/* ═══════════════════════════════════════
+   AUTO CAPTURE BANK FROM POLICY PASTE
+═══════════════════════════════════════ */
+var KNOWN_BANKS=['State Bank of India','SBI','HDFC Bank','HDFC','ICICI Bank','ICICI','Axis Bank','Kotak Mahindra Bank','Kotak','Punjab National Bank','PNB','Bank of Baroda','Canara Bank','Union Bank','IDBI Bank','YES Bank','IndusInd Bank','Federal Bank','Bajaj Finance','Tata Capital','IIFL Finance','Cholamandalam','Hero Housing Finance','AU Small Finance Bank','Godrej Finance','InCred','PNB Housing Finance','LIC Housing Finance','Piramal Finance'];
+
+function autoCaptureBank(){
+  var text=(document.getElementById('bk_policy').value||'');
+  if(!text)return;
+  var changed=false;
+  // Bank Name
+  var found='';
+  KNOWN_BANKS.forEach(function(bn){if(!found&&text.toLowerCase().indexOf(bn.toLowerCase())>=0)found=bn;});
+  if(found){
+    var ne=document.getElementById('bk_name');
+    if(ne&&!ne.value.trim()){ne.value=found;changed=true;}
+    var ce=document.getElementById('bk_code');
+    if(ce&&!ce.value.trim()){
+      var words=found.split(' ');
+      ce.value=(words.length>=3?words.map(function(w){return w[0];}).join('').toUpperCase():found.slice(0,4).toUpperCase()).slice(0,4);
+      changed=true;
+    }
+  }
+  // ROI
+  var roiM=text.match(/ROI\s*[:\-]?\s*([\d.]+\s*%[^<\n]{0,25})/i);
+  if(roiM){var re=document.getElementById('bk_roi');if(re&&!re.value.trim()){re.value=roiM[1].trim();changed=true;}}
+  // Commission/Payout
+  var payM=text.match(/(?:payout|commission)\s*[:\-]?\s*([\d.]+\s*%)/i);
+  if(payM){var pe=document.getElementById('bk_rate');if(pe&&!pe.value.trim()){pe.value=payM[1].trim();changed=true;}}
+  // CIBIL
+  var cbM=text.match(/(?:min|cibil)\s*[:\-]?\s*([6-9]\d{2})/i);
+  if(cbM){var cbe=document.getElementById('bk_cibil');if(cbe&&!cbe.value.trim()){cbe.value=cbM[1]+'+';changed=true;}}
+  // TAT
+  var tatM=text.match(/(?:tat|turn\s*around)[:\s\-]*([^\n,.]{3,20})/i);
+  if(tatM){var te=document.getElementById('bk_tat');if(te&&!te.value.trim()){te.value=tatM[1].trim();changed=true;}}
+  // Location
+  var cities=['Mumbai','Delhi','Bangalore','Hyderabad','Chennai','Kolkata','Pune','Ahmedabad','Visakhapatnam','Vizag','Vijayawada','Guntur','Nellore','Kakinada','Rajahmundry','Warangal','Karimnagar'];
+  var fc='';
+  cities.forEach(function(c){if(!fc&&text.toLowerCase().indexOf(c.toLowerCase())>=0)fc=c;});
+  if(fc){var le=document.getElementById('bk_location');if(le&&!le.value.trim()){le.value=fc;changed=true;}}
+  // Show status
+  if(changed){
+    var st=document.getElementById('parseStatus');
+    if(st){st.style.display='block';setTimeout(function(){if(st)st.style.display='none';},3000);}
+  }
+}
+
+/* ═══════════════════════════════════════
+   BANKER COMMUNICATION
+═══════════════════════════════════════ */
+function closeBankerContactModal(){
+  document.getElementById('bankerContactModal').style.display='none';
+  ['bc_bank','bc_location','bc_name','bc_phone','bc_email'].forEach(function(id){var e=document.getElementById(id);if(e)e.value='';});
+}
+
+function saveBankerContact(){
+  var bank=(document.getElementById('bc_bank').value||'').trim();
+  var loc=(document.getElementById('bc_location').value||'').trim();
+  var name=(document.getElementById('bc_name').value||'').trim();
+  var phone=(document.getElementById('bc_phone').value||'').trim();
+  if(!bank){showToast('Enter bank / NBFC name','error');return;}
+  if(!loc){showToast('Enter location / branch','error');return;}
+  if(!name){showToast('Enter banker name','error');return;}
+  if(!phone||phone.length<10){showToast('Enter valid 10-digit mobile','error');return;}
+  BANKER_CONTACTS.push({
+    id:Date.now(),bank:bank,location:loc,name:name,phone:phone,
+    email:(document.getElementById('bc_email').value||'').trim()
+  });
+  closeBankerContactModal();
+  renderBankerContacts();
+  showToast('Banker contact added ✅');
+}
+
+function chatWithBank(bankId){
+  var b=BANKS.find(function(x){return x.id===bankId;});
+  if(!b)return;
+  // Auto-create contact if needed
+  if(!BANKER_CONTACTS.find(function(c){return c.id===bankId;})){
+    BANKER_CONTACTS.push({id:bankId,bank:b.name,location:b.location,name:b.rm,phone:b.rmphone||'',email:b.rmemail||''});
+    renderBankerContacts();
+  }
+  selectBankerContact(bankId);
+  var chatEl=document.querySelector('.banker-comm-section');
+  if(chatEl)chatEl.scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function renderBankerContacts(){
+  var grid=document.getElementById('bankerContactsGrid');if(!grid)return;
+  if(!BANKER_CONTACTS.length){
+    grid.innerHTML='<div style="grid-column:1/-1;text-align:center;padding:40px 20px;color:var(--text3)">'
+      +'<div style="font-size:36px;margin-bottom:10px">📞</div>'
+      +'<p style="font-weight:700;font-size:14px;color:var(--text2);margin-bottom:4px">No banker contacts yet</p>'
+      +'<p style="font-size:13px">Add banker contacts to call, WhatsApp, email or chat directly</p>'
+      +'</div>';
+    renderChatPills();return;
+  }
+  grid.innerHTML=BANKER_CONTACTS.map(function(c,i){
+    var col=BANK_COLORS[i%BANK_COLORS.length];
+    var sel=c.id===_activeBankerId;
+    return '<div class="comm-contact-card'+(sel?' selected':'')+'" id="cc-'+c.id+'" onclick="selectBankerContact('+c.id+')">'
+      +'<div class="cc-top">'
+        +'<div class="cc-avatar" style="background:'+col+'">'+c.name.slice(0,2).toUpperCase()+'</div>'
+        +'<div><div class="cc-name">'+c.name+'</div><div class="cc-bank">'+c.bank+' · '+c.location+'</div></div>'
+      +'</div>'
+      +'<div class="cc-details">'
+        +'<div class="cc-detail"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 4l7 4 7-4"/><rect x="1" y="3" width="14" height="10" rx="1.5"/></svg>'+c.phone+'</div>'
+        +(c.email?'<div class="cc-detail"><svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M1 4l7 4 7-4"/><rect x="1" y="3" width="14" height="10" rx="1.5"/></svg>'+c.email+'</div>':'')
+      +'</div>'
+      +'<div class="cc-actions">'
+        +'<button class="cc-btn call" onclick="event.stopPropagation();if(\''+c.phone+'\')window.location.href=\'tel:'+c.phone+'\'">📞 Call</button>'
+        +'<button class="cc-btn wp" onclick="event.stopPropagation();window.open(\'https://wa.me/91'+c.phone+'\',\'_blank\')">💬 WA</button>'
+        +(c.email?'<button class="cc-btn mail" onclick="event.stopPropagation();window.location.href=\'mailto:'+c.email+'\'">✉️ Mail</button>':'')
+        +'<button class="cc-btn del" onclick="event.stopPropagation();deleteBankerContact('+c.id+')">✕</button>'
+      +'</div>'
+      +'</div>';
+  }).join('');
+  renderChatPills();
+}
+
+function deleteBankerContact(id){
+  BANKER_CONTACTS=BANKER_CONTACTS.filter(function(c){return c.id!==id;});
+  if(_activeBankerId===id){_activeBankerId=null;renderChatBody();}
+  renderBankerContacts();showToast('Contact removed');
+}
+
+function renderChatPills(){
+  var pills=document.getElementById('chatPills');if(!pills)return;
+  if(!BANKER_CONTACTS.length){
+    pills.innerHTML='<span style="font-size:12px;color:var(--text3);padding:5px 0;white-space:nowrap">No contacts added yet</span>';
+    return;
+  }
+  pills.innerHTML=BANKER_CONTACTS.map(function(c){
+    return '<span class="chat-pill'+(c.id===_activeBankerId?' active':'')+'" onclick="selectBankerContact('+c.id+')">'+c.name+' ('+c.bank+')</span>';
+  }).join('');
+}
+
+function selectBankerContact(id){
+  _activeBankerId=id;
+  var c=BANKER_CONTACTS.find(function(x){return x.id===id;});
+  if(c){
+    var sub=document.getElementById('chatHeadSub');
+    if(sub)sub.textContent='Chatting with '+c.name+' — '+c.bank+' · '+c.location;
+  }
+  if(!CHAT_MESSAGES[id])CHAT_MESSAGES[id]=[];
+  renderChatBody();
+  renderChatPills();
+  // Highlight selected card
+  document.querySelectorAll('.comm-contact-card').forEach(function(el){el.classList.remove('selected');});
+  var card=document.getElementById('cc-'+id);if(card)card.classList.add('selected');
+}
+
+function renderChatBody(){
+  var body=document.getElementById('chatBody');if(!body)return;
+  if(!_activeBankerId){
+    body.innerHTML='<div class="chat-empty">💬 Select a banker contact from above to start chatting</div>';
+    return;
+  }
+  var msgs=CHAT_MESSAGES[_activeBankerId]||[];
+  if(!msgs.length){
+    body.innerHTML='<div class="chat-empty">No messages yet — say hello to your banker! 👋</div>';
+    return;
+  }
+  body.innerHTML=msgs.map(function(m){
+    return '<div class="chat-msg '+(m.sent?'sent':'recv')+'">'
+      +'<div>'+m.text+'</div>'
+      +'<div class="chat-msg-time">'+m.time+'</div>'
+      +'</div>';
+  }).join('');
+  body.scrollTop=body.scrollHeight;
+}
+
+function sendChatMsg(){
+  if(!_activeBankerId){showToast('Select a banker contact first','error');return;}
+  var inp=document.getElementById('chatInput');if(!inp)return;
+  var text=(inp.value||'').trim();if(!text)return;
+  if(!CHAT_MESSAGES[_activeBankerId])CHAT_MESSAGES[_activeBankerId]=[];
+  var now=new Date();
+  CHAT_MESSAGES[_activeBankerId].push({
+    text:text,sent:true,
+    time:('0'+now.getHours()).slice(-2)+':'+('0'+now.getMinutes()).slice(-2)
+  });
+  inp.value='';inp.style.height='auto';
+  renderChatBody();
+}
+
+function chatCallBanker(){
+  if(!_activeBankerId){showToast('Select a banker contact first','error');return;}
+  var c=BANKER_CONTACTS.find(function(x){return x.id===_activeBankerId;});
+  if(c&&c.phone)window.location.href='tel:'+c.phone;
+  else showToast('No phone number for this contact','error');
+}
+function chatWhatsAppBanker(){
+  if(!_activeBankerId){showToast('Select a banker contact first','error');return;}
+  var c=BANKER_CONTACTS.find(function(x){return x.id===_activeBankerId;});
+  if(c&&c.phone)window.open('https://wa.me/91'+c.phone,'_blank');
+  else showToast('No phone number for this contact','error');
+}
+function chatMailBanker(){
+  if(!_activeBankerId){showToast('Select a banker contact first','error');return;}
+  var c=BANKER_CONTACTS.find(function(x){return x.id===_activeBankerId;});
+  if(c&&c.email)window.location.href='mailto:'+c.email;
+  else showToast('No email for this contact','error');
+}
+
+/* ═══════════════════════════════════════
+   ADMIN FUNCTIONS
+═══════════════════════════════════════ */
+function adminNav(section){
+  document.getElementById('ad-dsa').style.display=section==='dsa'?'block':'none';
+  document.getElementById('ad-pending').style.display=section==='pending'?'block':'none';
+  document.querySelectorAll('.admin-sidebar .sb-item').forEach(function(el){el.classList.remove('active');});
+  var ni=document.getElementById('adnav-'+section);if(ni)ni.classList.add('active');
+  if(section==='dsa')renderAdminTable();
+  if(section==='pending')renderPendingTable();
+}
+
+function updateAdminKPIs(){
+  var total=DSA_USERS.length;
+  var approved=DSA_USERS.filter(function(u){return u.status==='Approved';}).length;
+  var pending=DSA_USERS.filter(function(u){return u.status==='Pending';}).length;
+  var rejected=DSA_USERS.filter(function(u){return u.status==='Rejected';}).length;
+  var s=function(id,v){var e=document.getElementById(id);if(e)e.textContent=v;};
+  s('adKpiTotal',total);s('adKpiApproved',approved);s('adKpiPending',pending);s('adKpiRejected',rejected);
+  var pb=document.getElementById('pendingBadge');
+  if(pb){pb.textContent=pending;pb.style.display=pending>0?'':'none';}
+}
+
+function renderAdminTable(){
+  var q=((document.getElementById('adminSearch')||{}).value||'').toLowerCase();
+  var sf=((document.getElementById('adminStatusFilter')||{}).value||'');
+  var filtered=DSA_USERS.filter(function(u){
+    if(q&&u.name.toLowerCase().indexOf(q)<0&&u.mobile.indexOf(q)<0)return false;
+    if(sf&&u.status!==sf)return false;
+    return true;
+  });
+  var tbody=document.getElementById('adminTableBody');
+  var empty=document.getElementById('adminEmpty');
+  if(!filtered.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';updateAdminKPIs();return;}
+  if(empty)empty.style.display='none';
+  if(!tbody){updateAdminKPIs();return;}
+  tbody.innerHTML=filtered.map(function(u){
+    var sc=u.status==='Approved'?'var(--green-bg),var(--green)':u.status==='Rejected'?'var(--red-bg),var(--red)':'var(--yellow-bg),var(--yellow)';
+    var bg=sc.split(',')[0],col=sc.split(',')[1];
+    return '<tr>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb"><div style="font-weight:700;font-size:13px">'+u.name+'</div>'+(u.email?'<div style="font-size:11px;color:var(--text3)">'+u.email+'</div>':'')+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb;font-size:13px">'+u.mobile+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb;font-size:12px;color:var(--text2)">'+u.type+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb;font-size:13px">'+u.city+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb">'
+        +'<span style="background:'+bg+';color:'+col+';padding:2px 9px;border-radius:20px;font-size:11px;font-weight:700">'+u.status+'</span>'
+      +'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb;font-size:12px;color:var(--text3)">'+fmtDate(u.date)+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb">'
+        +(u.status!=='Approved'?'<button style="padding:5px 10px;height:28px;border:none;border-radius:7px;background:var(--green-bg);color:var(--green);font-size:11.5px;font-weight:700;cursor:pointer;margin-right:4px" onclick="approveUser('+u.id+')">✅ Approve</button>':'')
+        +(u.status!=='Rejected'?'<button style="padding:5px 10px;height:28px;border:none;border-radius:7px;background:var(--red-bg);color:var(--red);font-size:11.5px;font-weight:700;cursor:pointer;margin-right:4px" onclick="rejectUser('+u.id+')">❌ Reject</button>':'')
+        +'<button style="padding:5px 8px;height:28px;border:none;border-radius:7px;background:#f3f4f6;color:var(--text2);font-size:12px;font-weight:700;cursor:pointer" onclick="deleteUser('+u.id+')">🗑</button>'
+      +'</td>'
+      +'</tr>';
+  }).join('');
+  updateAdminKPIs();
+}
+
+function renderPendingTable(){
+  var pending=DSA_USERS.filter(function(u){return u.status==='Pending';});
+  var tbody=document.getElementById('pendingTableBody');
+  var empty=document.getElementById('pendingEmpty');
+  if(!pending.length){if(tbody)tbody.innerHTML='';if(empty)empty.style.display='block';updateAdminKPIs();return;}
+  if(empty)empty.style.display='none';
+  if(!tbody){updateAdminKPIs();return;}
+  tbody.innerHTML=pending.map(function(u){
+    return '<tr>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb"><div style="font-weight:700;font-size:13px">'+u.name+'</div></td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb;font-size:13px">'+u.mobile+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb;font-size:12px;color:var(--text2)">'+u.type+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb;font-size:13px">'+u.city+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb;font-size:12px;color:var(--text3)">'+fmtDate(u.date)+'</td>'
+      +'<td style="padding:12px 18px;border-bottom:1px solid #f9fafb">'
+        +'<button style="padding:5px 10px;height:28px;border:none;border-radius:7px;background:var(--green-bg);color:var(--green);font-size:11.5px;font-weight:700;cursor:pointer;margin-right:4px" onclick="approveUser('+u.id+')">✅ Approve</button>'
+        +'<button style="padding:5px 10px;height:28px;border:none;border-radius:7px;background:var(--red-bg);color:var(--red);font-size:11.5px;font-weight:700;cursor:pointer" onclick="rejectUser('+u.id+')">❌ Reject</button>'
+      +'</td>'
+      +'</tr>';
+  }).join('');
+  updateAdminKPIs();
+}
+
+function approveUser(id){
+  var u=DSA_USERS.find(function(x){return x.id===id;});
+  if(u){u.status='Approved';renderAdminTable();renderPendingTable();showToast(u.name+' approved ✅');}
+}
+function rejectUser(id){
+  var u=DSA_USERS.find(function(x){return x.id===id;});
+  if(u){u.status='Rejected';renderAdminTable();renderPendingTable();showToast(u.name+' rejected');}
+}
+function deleteUser(id){
+  DSA_USERS=DSA_USERS.filter(function(u){return u.id!==id;});
+  renderAdminTable();renderPendingTable();showToast('User deleted');
+}
+
+</script>
+</body>
+</html>
